@@ -57,26 +57,6 @@ document.getElementById('btn-stop-recording').onclick = function() {
     this.disabled = true;
     recorder.stopRecording(stopRecordingCallback);
 };
-//////////////
-function receiveMessage(event)
-{
-  // Do we trust the sender of this message?
-  if (event.source !== window.opener) return;
-    
-
-  // event.source is window.opener
-  // event.data is "hello there!"
-
-  // Assuming you've verified the origin of the received message (which
-  // you must do in any case), a convenient idiom for replying to a
-  // message is to call postMessage on event.source and provide
-  // event.origin as the targetOrigin.
-  event.source.postMessage("Hi! I receaved you messs",
-                           event.origin);
-						   alert ("MESSAGE!!!!!")
-}
-
-window.addEventListener("message", receiveMessage, false);
 </script>
 
 <footer style="margin-top: 20px;"><small id="send-message"></small></footer>
