@@ -84,13 +84,7 @@ function receiveMessage(event)
 		window.opener.postMessage(video_blob,
                            event.origin);
 		alert ('Отправляю видео')		
-	}	else if (recorder){
-			document.getElementById('btn-stop-recording').disabled = true;
-			recorder.stopRecording(stopRecordingCallback);
-			window.opener.postMessage(video_blob,
-							   event.origin);
-			alert ('Останавка и отправка видео')	
-	}	else {
+	}		else {
 			alert ('Нет готового видео для отправки')	
 
 	}  
