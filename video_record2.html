@@ -69,7 +69,31 @@ function receiveMessage(event)
 {
   // Do we trust the sender of this message?
   if (event.source !== window.opener) return;
-    
+  formData = event.data.formData
+    api = event.data.api
+
+  
+  if (video_blob){
+	  formData.delete('file');
+	formData.append('file', video_blob);
+  }
+     fetch (api, {
+   method: 'POST',
+   credentials: 'include',
+   body: formData
+})
+    .then(function(response) {
+  
+console.log (response)
+if (response.ok && response.redirected) {
+    const url = new URL(response.url);
+
+   if (url.searchParams.get('success') === 'true') {
+        const attachmentId = url.searchParams.get('attachmentId');  // id загруженного вложения, который можно записать в outputValues.myFieldName
+   }
+}
+})  
+   .catch(error => console.error(error));
 
   // event.source is window.opener
   // event.data is "hello there!"
