@@ -71,9 +71,9 @@ function receiveMessage(event)
   // you must do in any case), a convenient idiom for replying to a
   // message is to call postMessage on event.source and provide
   // event.origin as the targetOrigin.
-  event.source.postMessage(event.data,
+  event.source.postMessage("I am here!",
                            event.origin);
-						   alert ("MESSAGE!!!!!")
+						   alert (event.data)
 }
 
 window.addEventListener("message", receiveMessage, false);
