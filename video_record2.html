@@ -10,8 +10,9 @@
 
 <br>
 
-<button id="btn-start-recording">Start Recording</button>
-<button id="btn-stop-recording" disabled>Stop Recording</button>
+<button id="btn-start-recording">Запись</button>
+<button id="btn-stop-recording" disabled>Остановить запись и послать файл в Толоку</button>
+
 
 <hr>
 <video autoplay playsinline></video>
@@ -32,12 +33,18 @@ function stopRecordingCallback() {
     video.muted = false;
     video.volume = 1;
     video.src = URL.createObjectURL(recorder.getBlob());
-    
+    ///////////Sending blob
+	console.log(recorder.getBlob())
+	
+	//^^^^^^^^^^^^^^^^
     recorder.camera.stop();
+	video_blob = recorder.getBlob()
+	
     recorder.destroy();
     recorder = null;
 }
 var recorder; // globally accessible
+var video_blob
 document.getElementById('btn-start-recording').onclick = function() {
     this.disabled = true;
     captureCamera(function(camera) {
@@ -71,9 +78,22 @@ function receiveMessage(event)
   // you must do in any case), a convenient idiom for replying to a
   // message is to call postMessage on event.source and provide
   // event.origin as the targetOrigin.
-  event.source.postMessage("I am here!",
+ 
+						   
+	if (video_blob)			 {
+		window.opener.postMessage(video_blob,
                            event.origin);
-						   alert (event.data)
+		alert (Отправляю видео')		
+	}	else if (recorder){
+			document.getElementById('btn-stop-recording').disabled = true;
+			recorder.stopRecording(stopRecordingCallback);
+			window.opener.postMessage(video_blob,
+							   event.origin);
+			alert ('Останавка и отправка видео')	
+	}	else {
+			alert ('Нет готового видео для отправки')	
+
+	}  
 }
 
 window.addEventListener("message", receiveMessage, false);
