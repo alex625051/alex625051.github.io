@@ -71,7 +71,7 @@ function receiveMessage(event)
   // you must do in any case), a convenient idiom for replying to a
   // message is to call postMessage on event.source and provide
   // event.origin as the targetOrigin.
-  event.source.postMessage("Hi! I receaved you messs",
+  event.source.postMessage(event.data,
                            event.origin);
 						   alert ("MESSAGE!!!!!")
 }
