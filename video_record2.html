@@ -70,14 +70,13 @@ function receiveMessage(event)
   // Do we trust the sender of this message?
   if (event.source !== window.opener) return;
   const formData = new FormData();
-  formData.append('name', event.data.FormData.name);
-formData.append('assignmentId', event.data.assignmentId);
-formData.append('redirectUrl', event.data.redirectUrl);
-formData.append('file', event.data.file);
+  formData.append('name', event.data.formData.name);
+formData.append('assignmentId', event.data.formData.assignmentId);
+formData.append('redirectUrl', event.data.formData.redirectUrl);
+formData.append('file', event.data.formData.file);
   
   
   
-  formData = event.data.formData
     api = event.data.api
 
   
