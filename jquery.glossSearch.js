@@ -70,7 +70,7 @@ function _unpack_reformulation(reformulation) {
 	}
 }
 function _replacer_screenshots(str, p1, offset, s) {
-  return '<a href="'+p1+'" target="_blank"><img src="'+ p1 + '"  width="100px" align="left"><a><br>'
+  return '<a href="'+p1+'" target="_blank"><img src="'+ p1 + '"  width="100px" align="left"></a><br>'
 }
 function highlite_match(p1, pos) {
   return "<span style='font-weight:bold;color:Blue;'>" + p1 + "</span>"
