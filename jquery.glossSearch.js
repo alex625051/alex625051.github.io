@@ -53,7 +53,7 @@ if (!window.sample){ window.sample = [
     "short_description": "",
     "full_description": "Путь по файловой системе от корня до рабочего каталога самого глубокого уровня - https://jing.yandex-team.ru/files/link551/Glossarii__Wiki_2019-06-04_21-21-25.png"
   }
-] }//window.sample
+];
 	function create_source_table(sample_table){
 	sample_table.forEach (raw=> {
 		raw.label = raw.key + _unpack_reformulation(raw.reformulation)
@@ -135,7 +135,8 @@ $this.find('.autocomplete_widget_inputing').search_terms({
                glossSearch : glossSearch
            });
 
-         }
+         }//window.sample
+		 }
        });
      }, // init  
      destroy : function( ) {
