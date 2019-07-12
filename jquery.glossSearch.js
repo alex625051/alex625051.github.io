@@ -24,12 +24,13 @@
 
 (function ($) {
     //ссылка для запроса таблицы с данными
+    var ENTERinInput = true;
     var gloss_url = "https://alex625051.github.io/gloss_json.json"
         var methods = {
         destroy: function () {
             return this.each(function () {
                 var $this = $(this)
-				$this.find('.glossSearch_widget_inputing').search_terms('destroy')
+                    $this.find('.glossSearch_widget_inputing').search_terms('destroy')
                     $(window).unbind('.glossSearch');
                 if (window.glossSearch_source) {
                     window.glossSearch_source.length = 0;
@@ -98,12 +99,16 @@
                             minLength: settings.minLength,
                             maxResults: settings.maxResults,
                             select: function (event, ui) {
-                                glossSearch_full_description.html(ui.item.full_description).show();
+                                ENTERinInput = false
+                                    glossSearch_full_description.html(ui.item.full_description).show();
                                 $this.find(".glossSearch_widget_inputing").focus().select()
                                 /*ui.item будет содержать выбранный элемент*/
                             },
                             search: function (event, ui) {
-                                glossSearch_full_description.hide();
+
+                                if (ENTERinInput) {
+                                    glossSearch_full_description.hide();
+                                }
                                 glossSearch_widget_inputing.search_terms("option", {
                                     minLength: settings.minLength
                                 })
@@ -114,14 +119,18 @@
                                 response(results.slice(0, this.options.maxResults));
                             }
                         });
-                        glossSearch_widget_inputing.on('keydown', function (e) {
-                            if (e.which === 13) {
+                        glossSearch_widget_inputing.on('keyup ', function (e) {
+                            if ((e.which === 13) && ENTERinInput) {
+                                e.stopPropagation();
+                                event.preventDefault();
                                 glossSearch_widget_inputing.search_terms("option", {
                                     minLength: 0
                                 });
                                 glossSearch_widget_inputing.search_terms("search", glossSearch_widget_inputing.val())
+
                                 return false;
                             }
+                            ENTERinInput = true;
                         })
 
                     } else {
