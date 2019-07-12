@@ -1,15 +1,121 @@
-/////////////////////////@westeraspect
+/*!
+ * плагин jQuery интерфейса глоссария
+ * автор: @westeraspect
+ * лицензия MIT
+ */
+/*!
+ * requred: jquery.js, jquery-ui.js, jquery-ui.css
+ * examples:
+ *	1) $('#autocomplete_box').glossSearch('add',{sample:sample1()})
+ *  2) $('#autocomplete_box').glossSearch('add',{sample:'ajax_to_S3'})
+ * Syntax:
+ *	$(div).glossSearch('add',{options}) // элемент <div/> для прикрепления плагина
+ *	options= {
+ *		'maxResults': {Number}, 		// количество выдачи вариантов в меню
+ *      'minLength': {Number}, 			//	минимальная длина слова для предоставления вариантов
+ *      'screenShotWidth': {String}, 	//	ширина картинки для предпросмотра скриншотов в px, %
+ *		'sample':{String/JSON} 			//	'ajax_to_S3' для запроса к серверу с данными, или JSON
+ *	}
+ *	$(div).glossSearch('destroy') 		// деактивировать плагин и удалить массив с данными window.sample
+ *
+ *
+ */
+
 (function ($) {
+    //ссылка для запроса таблтцы с данными
     var gloss_url = "https://alex625051.github.io/gloss_json.json"
         var methods = {
-        init: function (options) {
+        destroy: function () {
+            return this.each(function () {
+                var $this = $(this)
+                    $(window).unbind('.glossSearch');
+                if (window.sample) {
+                    window.sample.length = 0;
+                    window.sample = null;
+                }
+                $this.html('')
+            })
+        },
+        add: function (options) {
+            // defaults
             var settings = $.extend({
+                    'maxResults': 10,
+                    'minLength': 2,
                     'screenShotWidth': '100px'
+
                 }, options);
-            var $this = $(this)
+
+            return this.each(function () {
+                var $this = $(this)
+
+                function add_plugin() {
+                    if (window.sample) {
+                        //css для поля полной информации
+                        var autocomplete_full_description_css = '\
+                            position:absolute;\
+                            margin-top:5px;\
+                            margin-left:0px;\
+                            width:100%;\
+                            z-index:99999;\
+                            display:none;\
+                            padding:15px;\
+                            box-shadow: inset 0 0 3px 3px rgb(255, 228, 120);\
+                            background-color: rgb(246, 245, 243);\
+                            '
+                            //css для <input>
+                            var autocomplete_widget_inputing_css = '\
+                            width:100%;\
+                            border: solid rgb(255, 228, 120);\
+                            font-size: 13px;\
+                            padding: 4px 6px 4px 8px;\
+                            '
+                            //добавление элементов в родительский <div>
+                            $this.addClass('ui-widget')
+                            $this.append('<input class="autocomplete_widget_inputing" style="' + autocomplete_widget_inputing_css + '">')
+                            $this.append('<div style="position:relative;width:calc(100% - 30px);"><div class="autocomplete_full_description" style="' + autocomplete_full_description_css + '"><div></div>')
+                            $this.find(".autocomplete_widget_inputing").on('focus', function () {
+                                $this.find(".autocomplete_widget_inputing").select()
+                            })
+                            var bbox = $this
+                            var autocomplete_full_description = $this.find(".autocomplete_full_description")
+                            $.widget("custom.search_terms", $.ui.autocomplete, {
+                                _renderItem: function (ul, item) {
+                                    var re = new RegExp(this.term, "gi");
+                                    var t = item.label.replace(re, highlite_match);
+                                    return $("<li></li>")
+                                    .data("ui-autocomplete-item", item)
+                                    .append($("<div>").html(t))
+                                    .appendTo(ul);
+                                }
+                            });
+                        //Добавление плагина к элементу
+                        $this.find('.autocomplete_widget_inputing').search_terms({
+                            minLength: settings.minLength,
+                            maxResults: settings.maxResults,
+                            //source: sample,
+                            select: function (event, ui) {
+                                autocomplete_full_description.html(ui.item.full_description).show();
+                                $this.find(".autocomplete_widget_inputing").focus()
+                                /*ui.item будет содержать выбранный элемент*/
+                            },
+                            search: function (event, ui) {
+                                autocomplete_full_description.hide();
+                            },
+                            source: function (request, response) {
+                                var results = $.ui.autocomplete.filter(sample, request.term);
+                                response(results.slice(0, this.options.maxResults));
+                            }
+                        });
+
+                    } else {
+                        console.log("Невозможно добавить плагин - нет массива данных")
+                    }
+
+                }; //add_plugin
                 // Если плагин ещё не проинициализирован
                 if (options.sample) {
                     if (!window.sample) {
+                        //первое создание(и последнее)таблицы в глобальной переменной
                         function create_source_table(sample_table) {
                             sample_table.forEach(raw => {
                                 raw.label = raw.key + _unpack_reformulation(raw.reformulation)
@@ -30,121 +136,50 @@
                         }
                         if (options.sample === 'ajax_to_S3') {
                             //из запроса ajax
-                            ajax_get(gloss_url, function (data) {
-                                window.sample = data
-                                    create_source_table(window.sample)
-                            })
-                            function ajax_get(url, callback) {
-                                var xmlhttp = new XMLHttpRequest();
-                                xmlhttp.onreadystatechange = function () {
-                                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                                        //console.log('responseText:' + xmlhttp.responseText);
-                                        try {
-                                            var data = JSON.parse(xmlhttp.responseText);
-                                        } catch (err) {
-                                            console.log(err.message + " in " + xmlhttp.responseText);
-                                            return;
-                                        }
-                                        callback(data);
+                            function getXmlHttp() {
+                                var xmlhttp;
+                                try {
+                                    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+                                } catch (e) {
+                                    try {
+                                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                                    } catch (E) {
+                                        xmlhttp = false;
                                     }
-                                };
-                                xmlhttp.open("GET", url, true);
-                                xmlhttp.send();
+                                }
+                                if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
+                                    xmlhttp = new XMLHttpRequest();
+                                }
+                                return xmlhttp;
                             }
+                            var req = getXmlHttp()
+                                req.open('GET', gloss_url, true);
+                            req.onreadystatechange = function () {
+                                if (req.readyState == 4) {
+                                    if (req.status == 200) {
+                                        var dataAjax = JSON.parse(req.responseText);
+                                        window.sample = dataAjax
+                                            create_source_table(window.sample)
+                                            add_plugin()
+                                    } else {
+                                        console.log("Ответ от сервера с таблицей не получен")
+                                    }
+                                }
+                            };
+                            req.send(null);
                         } else { //из sample
                             window.sample = options.sample
                                 create_source_table(window.sample)
+                                // Если плагин ещё не добавлен
+
+                                add_plugin()
                         } // if ajax
                     } //window.sample
                 } //options
                 else {
                     console.log("Нет массива в options для организации поиска")
                 }
-        }, // init
-        destroy: function () {
-            return this.each(function () {
-                var $this = $(this),
-                data = $this.data('glossSearch');
-                $(window).unbind('.glossSearch');
-                data.glossSearch.remove();
-                $this.removeData('glossSearch');
-            })
-        },
-        add: function (options) {
-            var settings = $.extend({
-                    'maxResults': 10,
-                    'minLength': 0
-                }, options);
-            return this.each(function () {
-                var $this = $(this),
-                data = $this.data('glossSearch'),
-                glossSearch = $('<div />', {
-                        text: $this.attr('title')
-                    });
-                // Если плагин ещё не добавлен
-                if (!data) {
-                    if (window.sample) {
-                        var autocomplete_full_description_css = '\
-                            position:absolute;\
-                            margin-top:5px;\
-                            margin-left:0px;\
-                            width:100%;\
-                            z-index:99999;\
-                            display:none;\
-                            padding:15px;\
-                            box-shadow: inset 0 0 3px 3px rgb(255, 228, 120);\
-                            background-color: rgb(246, 245, 243);\
-                            '
-                            var autocomplete_widget_inputing_css = '\
-                            width:100%;\
-                            border: solid rgb(255, 228, 120);\
-                            font-size: 13px;\
-                            padding: 4px 26px 4px 8px;\
-                            '
-                            $this.addClass('ui-widget')
-                            $this.append('<input class="autocomplete_widget_inputing" style="' + autocomplete_widget_inputing_css + '">')
-                            $this.append('<div style="position:relative;width:calc(100% - 30px);"><div class="autocomplete_full_description" style="' + autocomplete_full_description_css + '"><div></div>')
-                            $this.find(".autocomplete_widget_inputing").on('focus', function () {
-                                $this.find(".autocomplete_widget_inputing").select()
-                            })
-                            //$this.find(".autocomplete_widget_inputing").focus()
-                            var bbox = $this
-                            var autocomplete_full_description = $this.find(".autocomplete_full_description")
-                            $.widget("custom.search_terms", $.ui.autocomplete, {
-                                _renderItem: function (ul, item) {
-                                    var re = new RegExp(this.term, "gi");
-                                    var t = item.label.replace(re, highlite_match);
-                                    return $("<li></li>")
-                                    .data("ui-autocomplete-item", item)
-                                    .append($("<div>").html(t))
-                                    .appendTo(ul);
-                                }
-                            });
-                        $this.find('.autocomplete_widget_inputing').search_terms({
-                            minLength: settings.minLength,
-                            maxResults: settings.maxResults,
-                            //source: sample,
-                            select: function (event, ui) {
-                                autocomplete_full_description.html(ui.item.full_description).show();
-                                $this.find(".autocomplete_widget_inputing").focus()
-                                /*ui.item будет содержать выбранный элемент*/
-                            },
-                            search: function (event, ui) {
-                                autocomplete_full_description.hide();
-                            },
-                            source: function (request, response) {
-                                var results = $.ui.autocomplete.filter(sample, request.term);
-                                response(results.slice(0, this.options.maxResults));
-                            }
-                        });
-                        $(this).data('glossSearch', {
-                            target: $this,
-                            glossSearch: glossSearch
-                        });
-                    } else {
-                        console.log("Невозможно добавить плагин - нет массива данных")
-                    }
-                } //if data
+
             }) //each
             function highlite_match(p1, pos) {
                 return "<span style='font-weight:bold;color:Blue;'>" + p1 + "</span>"
@@ -160,6 +195,7 @@
             // ...
         }
     };
+    //создание плагина jquery
     $.fn.glossSearch = function (method) {
         // "this" уже является объектом jquery
         if (methods[method]) {
