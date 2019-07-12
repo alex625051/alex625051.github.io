@@ -6,8 +6,8 @@
 /*!
  * requred: jquery.js, jquery-ui.js, jquery-ui.css
  * examples:
- *	1) $('#autocomplete_box').glossSearch('add',{sample:sample1()})
- *  2) $('#autocomplete_box').glossSearch('add',{sample:'ajax_to_S3'})
+ *	1) $('#glossSearch_box').glossSearch('add',{sample:sample1()})
+ *  2) $('#glossSearch_box').glossSearch('add',{sample:'ajax_to_S3'})
  * Syntax:
  *	$(div).glossSearch('add',{options}) // элемент <div/> для прикрепления плагина
  *	options= {
@@ -51,7 +51,7 @@
                 function add_plugin() {
                     if (window.sample) {
                         //css для поля полной информации
-                        var autocomplete_full_description_css = '\
+                        var glossSearch_full_description_css = '\
                             position:absolute;\
                             margin-top:5px;\
                             margin-left:0px;\
@@ -63,7 +63,7 @@
                             background-color: rgb(246, 245, 243);\
                             '
                             //css для <input>
-                            var autocomplete_widget_inputing_css = '\
+                            var glossSearch_widget_inputing_css = '\
                             width:100%;\
                             border: solid rgb(255, 228, 120);\
                             font-size: 13px;\
@@ -71,13 +71,13 @@
                             '
                             //добавление элементов в родительский <div>
                             $this.addClass('ui-widget')
-                            $this.append('<input class="autocomplete_widget_inputing" style="' + autocomplete_widget_inputing_css + '">')
-                            $this.append('<div style="position:relative;width:calc(100% - 30px);"><div class="autocomplete_full_description" style="' + autocomplete_full_description_css + '"><div></div>')
-                            $this.find(".autocomplete_widget_inputing").on('focus', function () {
-                                $this.find(".autocomplete_widget_inputing").select()
+                            $this.append('<input class="glossSearch_widget_inputing" style="' + glossSearch_widget_inputing_css + '">')
+                            $this.append('<div style="position:relative;width:calc(100% - 30px);"><div class="glossSearch_full_description" style="' + glossSearch_full_description_css + '"><div></div>')
+                            $this.find(".glossSearch_widget_inputing").on('focus', function () {
+                                $this.find(".glossSearch_widget_inputing").select()
                             })
                             var bbox = $this
-                            var autocomplete_full_description = $this.find(".autocomplete_full_description")
+                            var glossSearch_full_description = $this.find(".glossSearch_full_description")
                             $.widget("custom.search_terms", $.ui.autocomplete, {
                                 _renderItem: function (ul, item) {
                                     var re = new RegExp(this.term, "gi");
@@ -89,17 +89,17 @@
                                 }
                             });
                         //Добавление плагина к элементу
-                        $this.find('.autocomplete_widget_inputing').search_terms({
+                        $this.find('.glossSearch_widget_inputing').search_terms({
                             minLength: settings.minLength,
                             maxResults: settings.maxResults,
                             //source: sample,
                             select: function (event, ui) {
-                                autocomplete_full_description.html(ui.item.full_description).show();
-                                $this.find(".autocomplete_widget_inputing").focus()
+                                glossSearch_full_description.html(ui.item.full_description).show();
+                                $this.find(".glossSearch_widget_inputing").focus()
                                 /*ui.item будет содержать выбранный элемент*/
                             },
                             search: function (event, ui) {
-                                autocomplete_full_description.hide();
+                                glossSearch_full_description.hide();
                             },
                             source: function (request, response) {
                                 var results = $.ui.autocomplete.filter(sample, request.term);
