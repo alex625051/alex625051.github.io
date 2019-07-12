@@ -2,7 +2,7 @@
  * плагин jQuery интерфейса глоссария
  * автор: @westeraspect
  * лицензия MIT
- * ver. 0.3
+ * ver. 0.7
  */
 /*!
  * requred: jquery.js, jquery-ui.js, jquery-ui.css
