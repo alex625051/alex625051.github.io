@@ -104,6 +104,10 @@
                                 $this.find(".glossSearch_widget_inputing").focus().select()
                                 /*ui.item будет содержать выбранный элемент*/
                             },
+                            focus: function (event, ui) {
+                                glossSearch_widget_inputing.val(ui.item.short_description)
+                                return false;
+                            },
                             search: function (event, ui) {
 
                                 if (ENTERinInput) {
@@ -114,6 +118,7 @@
                                 })
 
                             },
+
                             source: function (request, response) {
                                 var results = $.ui.autocomplete.filter(window.glossSearch_source, request.term);
                                 response(results.slice(0, this.options.maxResults));
@@ -145,7 +150,10 @@
                         function create_source_table(sample_table) {
                             sample_table.forEach(raw => {
                                 raw.label = raw.key + _unpack_reformulation(raw.reformulation)
-                                    raw.value = raw.short_description || ""
+                                    if (!raw.short_description) {
+                                        raw.short_description = raw.label
+                                    }
+                                    raw.value = raw.label //raw.short_description || null
                                     raw.full_description = raw.full_description.replace(/(https?\S*)/g, _replacer_http);
                                 raw.full_description = raw.full_description.replace(/_blank">(https?\S*?(\.png)|(\.svg)|(\.jpg)|(\.jpeg))<\/a>/g, _replacer_screenshots);
                                 //raw.full_description = raw.full_description.replace(/\(\((http.*?) Скриншот\)\)/g, replacer_screenshots);
