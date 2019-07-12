@@ -1,30 +1,20 @@
 /////////////////////////@westeraspect
 (function($) {
-
+	var gloss_url="https://alex625051.github.io/gloss_json.json"
     var methods = {
         init: function(options) {
             var settings = $.extend({
                 'screenShotWidth': '100px'
 
             }, options);
-           // if () {
 
                 var $this = $(this),
-                    data = $this.data('glossSearch'),
-                    glossSearch = $('<div />', {
-                        text: $this.attr('title')
-                    });
+                    
 
                 // Если плагин ещё не проинициализирован
                     if (options.sample) {
                         if (!window.sample) {
-							
-                            /*
-                             * Тут выполняем инициализацию
-                             */
-                            window.sample = options.sample
-
-                            function create_source_table(sample_table) {
+							 function create_source_table(sample_table) {
                                 sample_table.forEach(raw => {
                                     raw.label = raw.key + _unpack_reformulation(raw.reformulation)
                                     raw.value = raw.short_description || ""
@@ -44,13 +34,51 @@
                             function _replacer_screenshots(str, p1, offset, s) {
                                 return '<a href="' + p1 + '" target="_blank"><img src="' + p1 + '"  width="' + settings.screenShotWidth + '" align="left"><a><br>'
                             }
-
-
+							if (options.sample==='ajax_to_S3') {
+									//из запроса ajax
+								 ajax_get(gloss_url, function(data) {
+									 
+							window.sample = data
+                            create_source_table(window.sample)
+								 })
+								
+								
+								
+								
+								
+								function ajax_get(url, callback) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            //console.log('responseText:' + xmlhttp.responseText);
+            try {
+                var data = JSON.parse(xmlhttp.responseText);
+            } catch(err) {
+                console.log(err.message + " in " + xmlhttp.responseText);
+                return;
+            }
+            callback(data);
+        }
+    };
+ 
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
+							}
+							
+							
+							
+							
+							
+							else{ //из sample
+							
+                         
+                            window.sample = options.sample
                             create_source_table(window.sample)
 
 
 
-                            
+						}// if ajax  
                         } //window.sample
                     } //options
                     else {
@@ -58,7 +86,6 @@
                     }
                 
 
-            //                  }); //each
         }, // init  
         destroy: function() {
 
@@ -113,7 +140,7 @@
                     $this.find(".autocomplete_widget_inputing").on('focus', function() {
                         $this.find(".autocomplete_widget_inputing").select()
                     })
-                    $this.find(".autocomplete_widget_inputing").focus()
+                    //$this.find(".autocomplete_widget_inputing").focus()
 
                     var bbox = $this
                     var autocomplete_full_description = $this.find(".autocomplete_full_description")
