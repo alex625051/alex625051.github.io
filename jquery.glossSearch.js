@@ -25,7 +25,7 @@
 (function ($) {
     //ссылка для запроса таблицы с данными
     var gloss_url = "https://alex625051.github.io/gloss_json.json"
-	var window.glossSearch_source
+	window.glossSearch_source
         var methods = {
         destroy: function () {
             return this.each(function () {
