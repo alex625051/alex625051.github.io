@@ -136,7 +136,7 @@
                             return '<a href="' + p1 + '" target="_blank">'+p1+'</a>'
                         }
 						function _replacer_screenshots(str, p1, offset, s) {
-                            return '_blank"><img src="' + p1 + '"  width="' + settings.screenShotWidth + '"></a>'
+                            return '_blank"><img src="' + p1 + '"  width="' + settings.screenShotWidth + '" align="right" style="margin:5px;"></a>'
                         }
                         if (options.sample === 'ajax_to_S3') {
                             //из запроса ajax
