@@ -2,7 +2,7 @@
  * плагин jQuery интерфейса глоссария
  * автор: @westeraspect
  * лицензия MIT
- * ver. 0.7
+ * ver. 0.8
  */
 /*!
  * requred: jquery.js, jquery-ui.js, jquery-ui.css
@@ -14,6 +14,7 @@
  *	options= {
  *		'maxResults': {Number}, 		// количество выдачи вариантов в меню
  *      'minLength': {Number}, 			//	минимальная длина слова для предоставления вариантов
+ *		'url':{URL},					// для доступа по GET запросу на ресурс через синхронный Ajax
  *      'screenShotWidth': {String}, 	//	ширина картинки для предпросмотра скриншотов в px, %
  *		'source':{String/Array_of_objects} 			//	'ajax_to_S3' для запроса к серверу с данными, или массив объектов
  *	}
@@ -25,7 +26,6 @@
 (function ($) {
     //ссылка для запроса таблицы с данными
     var ENTERinInput = true;
-    var gloss_url = "https://alex625051.github.io/gloss_json.json"
         var methods = {
         destroy: function () {
             return this.each(function () {
@@ -44,7 +44,8 @@
             var settings = $.extend({
                     'maxResults': 10,
                     'minLength': 2,
-                    'screenShotWidth': '100px'
+                    'screenShotWidth': '100px',
+					'url': 'https://alex625051.github.io/gloss_json.json'
 
                 }, options);
 
@@ -191,7 +192,7 @@
                                 return xmlhttp;
                             }
                             var req = getXmlHttp()
-                                req.open('GET', gloss_url, true);
+                                req.open('GET', settings.url, true);
                             req.onreadystatechange = function () {
                                 if (req.readyState == 4) {
                                     if (req.status == 200) {
