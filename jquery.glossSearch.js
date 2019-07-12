@@ -95,7 +95,7 @@
                             //source: sample,
                             select: function (event, ui) {
                                 glossSearch_full_description.html(ui.item.full_description).show();
-                                $this.find(".glossSearch_widget_inputing").focus()
+                                $this.find(".glossSearch_widget_inputing").focus().select()
                                 /*ui.item будет содержать выбранный элемент*/
                             },
                             search: function (event, ui) {

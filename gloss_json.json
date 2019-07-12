@@ -1,18 +1,18 @@
 [
 	{
 		"key": "2Pane mode",
-		"full_description": "2-ух экранный режим моб.почты который отображается в ландшафтном режиме только для планшетов"
+		"full_description": "2-ух экранный режим моб.почты который отображается в ландшафтном режиме только для планшетов ((https://jing.yandex-team.ru/files/link551/2pane.png_279321_2019-06-04_21-19-48.png Скриншот))"
 	},
 	{
 		"key": "2pane",
-		"full_description": "2-х панельный интерфейс почтыКак выбрать:"
+		"full_description": "2-х панельный интерфейс почтыКак выбрать: https://jing.yandex-team.ru/files/link551/Glossarii__Wiki_2019-06-04_21-21-25.png"
 	},
 	{
 		"key": "3pane horizontal",
 		"reformulation": [
 			"оризонтальный 3пейн"
 		],
-		"full_description": "3-х панельный горизонтальный интерфейс почтыКак выбрать:"
+		"full_description": "3-х панельный горизонтальный интерфейс почтыКак выбрать: http://st.yandex-team.ru/."
 	},
 	{
 		"key": "3pane vertical",
