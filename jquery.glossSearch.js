@@ -17,7 +17,7 @@
  *      'screenShotWidth': {String}, 	//	ширина картинки для предпросмотра скриншотов в px, %
  *		'source':{String/Array_of_objects} 			//	'ajax_to_S3' для запроса к серверу с данными, или массив объектов
  *	}
- *	$(div).glossSearch('destroy') 		// деактивировать плагин и удалить массив с данными window.glossSearch_source
+ *	$(div).glossSearch('destroy') 		// деактивировать плагин и удалить массив с данными glossSearch_source
  *
  *
  */
@@ -25,14 +25,15 @@
 (function ($) {
     //ссылка для запроса таблицы с данными
     var gloss_url = "https://alex625051.github.io/gloss_json.json"
+	var glossSearch_source
         var methods = {
         destroy: function () {
             return this.each(function () {
                 var $this = $(this)
                     $(window).unbind('.glossSearch');
-                if (window.glossSearch_source) {
-                    window.glossSearch_source.length = 0;
-                    window.glossSearch_source = null;
+                if (glossSearch_source) {
+                    glossSearch_source.length = 0;
+                    glossSearch_source = null;
                 }
                 $this.html('')
             })
@@ -50,7 +51,7 @@
                 var $this = $(this)
 
                 function add_plugin() {
-                    if (window.glossSearch_source) {
+                    if (glossSearch_source) {
                         //css для поля полной информации
                         var glossSearch_full_description_css = '\
                             position:absolute;\
@@ -109,7 +110,7 @@
 
                             },
                             source: function (request, response) {
-                                var results = $.ui.autocomplete.filter(window.glossSearch_source, request.term);
+                                var results = $.ui.autocomplete.filter(glossSearch_source, request.term);
                                 response(results.slice(0, this.options.maxResults));
                             }
                         });
@@ -130,7 +131,7 @@
                 }; //add_plugin
                 // Если плагин ещё не проинициализирован
                 if (options.source) {
-                    if (!window.glossSearch_source) {
+                    if (!glossSearch_source) {
                         //первое создание(и последнее)таблицы в глобальной переменной
                         function create_source_table(sample_table) {
                             sample_table.forEach(raw => {
@@ -178,8 +179,8 @@
                                 if (req.readyState == 4) {
                                     if (req.status == 200) {
                                         var dataAjax = JSON.parse(req.responseText);
-                                        window.glossSearch_source = dataAjax
-                                            create_source_table(window.glossSearch_source)
+                                        glossSearch_source = dataAjax
+                                            create_source_table(glossSearch_source)
                                             add_plugin()
                                     } else {
                                         console.log("Ответ от сервера с таблицей не получен")
@@ -188,13 +189,13 @@
                             };
                             req.send(null);
                         } else { //из source
-                            window.glossSearch_source = options.source
-                                create_source_table(window.glossSearch_source)
+                            glossSearch_source = options.source
+                                create_source_table(glossSearch_source)
                                 // Если плагин ещё не добавлен
 
                                 add_plugin()
                         } // if ajax
-                    } //window.glossSearch_source
+                    } //glossSearch_source
                 } //options
                 else {
                     console.log("Нет массива в options для организации поиска")
