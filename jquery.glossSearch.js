@@ -120,7 +120,8 @@
                             sample_table.forEach(raw => {
                                 raw.label = raw.key + _unpack_reformulation(raw.reformulation)
                                     raw.value = raw.short_description || ""
-                                    raw.full_description = raw.full_description.replace(/(http\S*(\.png)|(\.svg)|(\.jpg)|(\.jpeg))/g, _replacer_screenshots);
+									raw.full_description = raw.full_description.replace(/(https?\S*)/g, _replacer_http);
+                                    raw.full_description = raw.full_description.replace(/_blank">(https?\S*?(\.png)|(\.svg)|(\.jpg)|(\.jpeg))<\/a>/g, _replacer_screenshots);
                                 //raw.full_description = raw.full_description.replace(/\(\((http.*?) Скриншот\)\)/g, replacer_screenshots);
                             })
                         }
@@ -131,8 +132,11 @@
                                 return ""
                             }
                         }
-                        function _replacer_screenshots(str, p1, offset, s) {
-                            return '<a href="' + p1 + '" target="_blank"><img src="' + p1 + '"  width="' + settings.screenShotWidth + '" align="left"><a><br>'
+                        function _replacer_http(str, p1, offset, s) {
+                            return '<a href="' + p1 + '" target="_blank">'+p1+'</a>'
+                        }
+						function _replacer_screenshots(str, p1, offset, s) {
+                            return '_blank"><img src="' + p1 + '"  width="' + settings.screenShotWidth + '"></a>'
                         }
                         if (options.sample === 'ajax_to_S3') {
                             //из запроса ajax
