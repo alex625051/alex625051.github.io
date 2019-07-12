@@ -91,13 +91,14 @@
                 if (window.sample) {
 					var autocomplete_full_description_css='\
 						position:absolute;\
-						margin-top:10px;\
+						margin-top:5px;\
 						margin-left:0px;\
 						width:100%;\
 						z-index:99999;\
 						display:none;\
-						padding:10px;\
+						padding:15px;\
 						box-shadow: inset 0 0 3px 3px rgb(255, 228, 120);\
+						background-color: rgb(246, 245, 243);\
 					'
 					var autocomplete_widget_inputing_css='\
 						width:100%;\
@@ -108,7 +109,7 @@
 					
                     $this.addClass('ui-widget')
                     $this.append('<input class="autocomplete_widget_inputing" style="'+autocomplete_widget_inputing_css+'">')
-                    $this.append ('<div style="position:relative;width:calc(100% - 14px);"><div class="autocomplete_full_description" style="'+autocomplete_full_description_css+'"><div></div>')
+                    $this.append ('<div style="position:relative;width:calc(100% - 30px);"><div class="autocomplete_full_description" style="'+autocomplete_full_description_css+'"><div></div>')
                     $this.find(".autocomplete_widget_inputing").on('focus', function() {
                         $this.find(".autocomplete_widget_inputing").select()
                     })
