@@ -15,7 +15,7 @@
  *		'maxResults': {Number}, 		// количество выдачи вариантов в меню
  *      'minLength': {Number}, 			//	минимальная длина слова для предоставления вариантов
  *      'screenShotWidth': {String}, 	//	ширина картинки для предпросмотра скриншотов в px, %
- *		'source':{String/JSON} 			//	'ajax_to_S3' для запроса к серверу с данными, или JSON
+ *		'source':{String/Array_of_objects} 			//	'ajax_to_S3' для запроса к серверу с данными, или массив объектов
  *	}
  *	$(div).glossSearch('destroy') 		// деактивировать плагин и удалить массив с данными window.glossSearch_source
  *
@@ -23,7 +23,7 @@
  */
 
 (function ($) {
-    //ссылка для запроса таблтцы с данными
+    //ссылка для запроса таблицы с данными
     var gloss_url = "https://alex625051.github.io/gloss_json.json"
         var methods = {
         destroy: function () {
@@ -73,12 +73,15 @@
                             //добавление элементов в родительский <div>
                             $this.addClass('ui-widget')
                             $this.append('<input class="glossSearch_widget_inputing" style="' + glossSearch_widget_inputing_css + '">')
+
                             $this.append('<div style="position:relative;width:calc(100% - 30px);"><div class="glossSearch_full_description" style="' + glossSearch_full_description_css + '"><div></div>')
                             $this.find(".glossSearch_widget_inputing").on('focus', function () {
                                 $this.find(".glossSearch_widget_inputing").select()
                             })
                             var bbox = $this
                             var glossSearch_full_description = $this.find(".glossSearch_full_description")
+                            var glossSearch_widget_inputing = $this.find('.glossSearch_widget_inputing')
+
                             $.widget("custom.search_terms", $.ui.autocomplete, {
                                 _renderItem: function (ul, item) {
                                     var re = new RegExp(this.term, "gi");
@@ -100,12 +103,25 @@
                             },
                             search: function (event, ui) {
                                 glossSearch_full_description.hide();
+                                glossSearch_widget_inputing.search_terms("option", {
+                                    minLength: settings.minLength
+                                })
+
                             },
                             source: function (request, response) {
-                                var results = $.ui.autocomplete.filter(sample, request.term);
+                                var results = $.ui.autocomplete.filter(window.glossSearch_source, request.term);
                                 response(results.slice(0, this.options.maxResults));
                             }
                         });
+                        glossSearch_widget_inputing.on('keydown', function (e) {
+                            if (e.which === 13) {
+                                glossSearch_widget_inputing.search_terms("option", {
+                                    minLength: 0
+                                });
+                                glossSearch_widget_inputing.search_terms("search", glossSearch_widget_inputing.val())
+                                return false;
+                            }
+                        })
 
                     } else {
                         console.log("Невозможно добавить плагин - нет массива данных")
@@ -120,8 +136,8 @@
                             sample_table.forEach(raw => {
                                 raw.label = raw.key + _unpack_reformulation(raw.reformulation)
                                     raw.value = raw.short_description || ""
-									raw.full_description = raw.full_description.replace(/(https?\S*)/g, _replacer_http);
-                                    raw.full_description = raw.full_description.replace(/_blank">(https?\S*?(\.png)|(\.svg)|(\.jpg)|(\.jpeg))<\/a>/g, _replacer_screenshots);
+                                    raw.full_description = raw.full_description.replace(/(https?\S*)/g, _replacer_http);
+                                raw.full_description = raw.full_description.replace(/_blank">(https?\S*?(\.png)|(\.svg)|(\.jpg)|(\.jpeg))<\/a>/g, _replacer_screenshots);
                                 //raw.full_description = raw.full_description.replace(/\(\((http.*?) Скриншот\)\)/g, replacer_screenshots);
                             })
                         }
@@ -133,9 +149,9 @@
                             }
                         }
                         function _replacer_http(str, p1, offset, s) {
-                            return '<a href="' + p1 + '" target="_blank">'+p1+'</a>'
+                            return '<a href="' + p1 + '" target="_blank">' + p1 + '</a>'
                         }
-						function _replacer_screenshots(str, p1, offset, s) {
+                        function _replacer_screenshots(str, p1, offset, s) {
                             return '_blank"><img src="' + p1 + '"  width="' + settings.screenShotWidth + '" align="right" style="margin:5px;"></a>'
                         }
                         if (options.source === 'ajax_to_S3') {
