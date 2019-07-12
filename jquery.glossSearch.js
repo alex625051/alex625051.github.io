@@ -2,21 +2,22 @@
  * плагин jQuery интерфейса глоссария
  * автор: @westeraspect
  * лицензия MIT
+ * ver. 0.3
  */
 /*!
  * requred: jquery.js, jquery-ui.js, jquery-ui.css
  * examples:
- *	1) $('#glossSearch_box').glossSearch('add',{sample:sample1()})
- *  2) $('#glossSearch_box').glossSearch('add',{sample:'ajax_to_S3'})
+ *	1) $('#glossSearch_box').glossSearch('add',{source: [{"key": "2Pane mode","full_description": "2-ух"}] })
+ *  2) $('#glossSearch_box').glossSearch('add',{source:'ajax_to_S3'})
  * Syntax:
  *	$(div).glossSearch('add',{options}) // элемент <div/> для прикрепления плагина
  *	options= {
  *		'maxResults': {Number}, 		// количество выдачи вариантов в меню
  *      'minLength': {Number}, 			//	минимальная длина слова для предоставления вариантов
  *      'screenShotWidth': {String}, 	//	ширина картинки для предпросмотра скриншотов в px, %
- *		'sample':{String/JSON} 			//	'ajax_to_S3' для запроса к серверу с данными, или JSON
+ *		'source':{String/JSON} 			//	'ajax_to_S3' для запроса к серверу с данными, или JSON
  *	}
- *	$(div).glossSearch('destroy') 		// деактивировать плагин и удалить массив с данными window.sample
+ *	$(div).glossSearch('destroy') 		// деактивировать плагин и удалить массив с данными window.glossSearch_source
  *
  *
  */
@@ -29,9 +30,9 @@
             return this.each(function () {
                 var $this = $(this)
                     $(window).unbind('.glossSearch');
-                if (window.sample) {
-                    window.sample.length = 0;
-                    window.sample = null;
+                if (window.glossSearch_source) {
+                    window.glossSearch_source.length = 0;
+                    window.glossSearch_source = null;
                 }
                 $this.html('')
             })
@@ -49,7 +50,7 @@
                 var $this = $(this)
 
                 function add_plugin() {
-                    if (window.sample) {
+                    if (window.glossSearch_source) {
                         //css для поля полной информации
                         var glossSearch_full_description_css = '\
                             position:absolute;\
@@ -92,7 +93,6 @@
                         $this.find('.glossSearch_widget_inputing').search_terms({
                             minLength: settings.minLength,
                             maxResults: settings.maxResults,
-                            //source: sample,
                             select: function (event, ui) {
                                 glossSearch_full_description.html(ui.item.full_description).show();
                                 $this.find(".glossSearch_widget_inputing").focus().select()
@@ -113,8 +113,8 @@
 
                 }; //add_plugin
                 // Если плагин ещё не проинициализирован
-                if (options.sample) {
-                    if (!window.sample) {
+                if (options.source) {
+                    if (!window.glossSearch_source) {
                         //первое создание(и последнее)таблицы в глобальной переменной
                         function create_source_table(sample_table) {
                             sample_table.forEach(raw => {
@@ -138,7 +138,7 @@
 						function _replacer_screenshots(str, p1, offset, s) {
                             return '_blank"><img src="' + p1 + '"  width="' + settings.screenShotWidth + '" align="right" style="margin:5px;"></a>'
                         }
-                        if (options.sample === 'ajax_to_S3') {
+                        if (options.source === 'ajax_to_S3') {
                             //из запроса ajax
                             function getXmlHttp() {
                                 var xmlhttp;
@@ -162,8 +162,8 @@
                                 if (req.readyState == 4) {
                                     if (req.status == 200) {
                                         var dataAjax = JSON.parse(req.responseText);
-                                        window.sample = dataAjax
-                                            create_source_table(window.sample)
+                                        window.glossSearch_source = dataAjax
+                                            create_source_table(window.glossSearch_source)
                                             add_plugin()
                                     } else {
                                         console.log("Ответ от сервера с таблицей не получен")
@@ -171,14 +171,14 @@
                                 }
                             };
                             req.send(null);
-                        } else { //из sample
-                            window.sample = options.sample
-                                create_source_table(window.sample)
+                        } else { //из source
+                            window.glossSearch_source = options.source
+                                create_source_table(window.glossSearch_source)
                                 // Если плагин ещё не добавлен
 
                                 add_plugin()
                         } // if ajax
-                    } //window.sample
+                    } //window.glossSearch_source
                 } //options
                 else {
                     console.log("Нет массива в options для организации поиска")
