@@ -1,0 +1,961 @@
+[
+  {
+    "key": "2pane",
+    "reformulation": [],
+    "short_description": "2-х панельный интерфейс почты",
+    "full_description": "2-х панельный интерфейс почты. https://jing.yandex-team.ru/files/link551/2pane.png_279321_2019-06-04_21-19-48.png"
+  },
+  {
+    "key": "App",
+    "reformulation": [
+      "Апп",
+      "App",
+      "Application",
+      "Приложение"
+    ],
+    "short_description": "Мобильное приложение",
+    "full_description": "Мобильное приложение - программное обеспечение, предназначенное для работы на смартфонах, планшетах"
+  },
+  {
+    "key": "PTR",
+    "reformulation": [
+      "Pull To Refresh",
+      "ПтР",
+      "p2r"
+    ],
+    "short_description": "Потянуть экран вниз для рефреша страницы",
+    "full_description": "Действие: потянуть экран вниз для рефреша страницы"
+  },
+  {
+    "key": "Навигационная цепочка",
+    "reformulation": [
+      "Хлебные крошки"
+    ],
+    "short_description": "",
+    "full_description": "Путь по файловой системе от корня до рабочего каталога самого глубокого уровня - https://jing.yandex-team.ru/files/link551/Glossarii__Wiki_2019-06-04_21-21-25.png"
+  },
+    {
+    "key": "2Pane mode",
+    "reformulation": [],
+    "short_description": "2-ух экранный режим моб.почты",
+    "full_description": "2-ух экранный режим моб.почты, который отображается в ландшафтном режиме только для планшетов"
+  },
+    {
+    "key": "3pane horizontal",
+    "reformulation": ["Горизонтальный 3пейн"],
+    "short_description": "3-х панельный горизонтальный интерфейс почты",
+    "full_description": "3-х панельный горизонтальный интерфейс почты. Как выбрать: https://jing.yandex-team.ru/files/snejca/загруженное.png"
+  },
+    {
+    "key": "3pane vertical",
+    "reformulation": ["Вертикальный 3пейн"],
+    "short_description": "3-х панельный вертикальный интерфейс почты",
+    "full_description": "3-х панельный вертикальный интерфейс почты. Как выбрать: https://jing.yandex-team.ru/files/snejca/20191007.png"
+  },
+    {
+    "key": "DV",
+    "reformulation": ["Docviewer"],
+    "short_description": "Просмотрщик документов",
+    "full_description": "Просмотрщик документов , архивов. Пример: https://jing.yandex-team.ru/files/snejca/20231007.png"
+  },
+    {
+    "key": "FA папка",
+    "reformulation": ["Full access", "Общая папка с полным доступом", "ОП с полным доступом"],
+    "short_description": "Папка другого аккаунта, к которой у вас есть доступ",
+    "full_description": "Папка другого аккаунта на Я.Диске, в которой вы можете просматривать и изменять файлы. Как настроить доступ можно прочитать здесь: https://yandex.ru/support/connect-disk/share/shared-folders.html"
+  },
+    {
+    "key": "fileManagerActivity",
+    "reformulation": [],
+    "short_description": "Окно файлового менеджера",
+    "full_description": "Окно файлового менеджера, вызывается по кнопке + 'Файлы с устройства' или при попытке скачать файл на устройство"
+  },
+    {
+    "key": "getFromDisk",
+    "reformulation": [],
+    "short_description": "Окно передачи в другое приложение из Я.Диска",
+    "full_description": "Окно передачи в другое приложение из Яндекс.Диска, например, в Gmail письме добавить аттач ИЗ Диска"
+  },
+    {
+    "key": "L-кука",
+    "reformulation": [],
+    "short_description": "",
+    "full_description": "Проставляется пользователям, которые пользовались логином с этого браузера за последние 10 лет"
+  },
+    {
+    "key": "NTP",
+    "reformulation": ["НТП"],
+    "short_description": "Новая вкладка в браузере",
+    "full_description": "Новая вкладка в браузере. Открывается нажатием на + в шапке."
+  },
+    {
+    "key": "PiP",
+    "reformulation": ["Picture in Picture"],
+    "short_description": "Проигрывание видео в режиме 'Картинка в картинке'",
+    "full_description": "Проигрывание видео в режиме 'Картинка в картинке'. Подробнее можно прочитать здесь: https://ru.wikipedia.org/wiki/PiP"
+  },
+    {
+    "key": "putToDisk",
+    "reformulation": [],
+    "short_description": "Окно передачи ИЗ другого приложения в Я.Диск",
+    "full_description": "Окно передачи ИЗ другого приложения в Яндекс.Диск, например, из TotalCommander отправить файл В Диск"
+  },
+    {
+    "key": "RO",
+    "reformulation": ["Read only", "Общая папка только для чтения", "ОП только для чтения"],
+    "short_description": "Папка другого аккаунта, к которой есть частичный доступ",
+    "full_description": "Папка другого аккаунта, в которой вы можете только просматривать файлы. Как настроить доступ можно прочитать здесь: https://yandex.ru/support/connect-disk/share/shared-folders.html"
+  },
+    {
+    "key": "Tab Bar",
+    "reformulation": ["Таббар"],
+    "short_description": "Нижнее меню",
+    "full_description": "Нижнее меню с кнопками переключения разных срезов/вкладок в мобильных приложениях (например моб.диске)"
+  },
+    {
+    "key": "tap-to-back",
+    "reformulation": [],
+    "short_description": "Возврат назад нажатием на кнопку",
+    "full_description": "В приложении Я.Диск для iOS при нажатии на кнопку среза Файлы происходит переход из любой подпапки в корень Диска"
+  },
+    {
+    "key": "БП",
+    "reformulation": ["Большая почта"],
+    "short_description": "Обычная почта",
+    "full_description": "Полная веб-версия почты https://mail.yandex.ru"
+  },
+    {
+    "key": "Кейс",
+    "reformulation": ["test case", "тест кейс"],
+    "short_description": "Набор шагов, которые нужно выполнить",
+    "full_description": "Набор шагов, которые нужно выполнить для проверки реализации тестируемой функции или её части (обычно в кейсе от 1 до 10 шагов)"
+  },
+    {
+    "key": "КМ",
+    "reformulation": [],
+    "short_description": "Контекстное меню",
+    "full_description": "Контекстное меню. Вызывается нажатием правой кнопки мыши. Пример: https://jing.yandex-team.ru/files/snejca/20521007.png"
+  },
+    {
+    "key": "КО",
+    "reformulation": ["Контрольный ответ"],
+    "short_description": "Ответ на контрольный вопрос",
+    "full_description": "Ответ на контрольный вопрос. Запрашивается при регистрации или восстановлении доступа к аккаунту"
+  },
+    {
+    "key": "ЛКМ",
+    "reformulation": [],
+    "short_description": "Левая кнопка мыши",
+    "full_description": "Левая кнопка мыши"
+  },
+    {
+    "key": "ПДД",
+    "reformulation": [],
+    "short_description": "Почта для доменов",
+    "full_description": "Почта для доменов. Подробнее можно прочитать здесь: https://yandex.ru/support/pdd/"
+  },
+    {
+    "key": "ПДД-аккаунт",
+    "reformulation": [],
+    "short_description": "Аккаунт почты для домена",
+    "full_description": "Аккаунты, вида 'имя_пользователя@доменное_имя_владельца.ru/com...', созданные для внешних доменов через https://pdd.yandex.ru/. В их логине внешний домен может быть указан на кириллице или латинице"
+  },
+    {
+    "key": "ПКМ",
+    "reformulation": [],
+    "short_description": "Правая кнопка мыши",
+    "full_description": "Правая кнопка мыши"
+  },
+    {
+    "key": "Попап",
+    "reformulation": ["Popup"],
+    "short_description": "Всплывающее окно",
+    "full_description": "Всплывающее окно, открываемое на экране компьютера в результате выполнения какой-либо операции"
+  },
+    {
+    "key": "ПП",
+    "reformulation": ["Поисковое приложение"],
+    "short_description": "Поисковое приложение от Яндекса",
+    "full_description": "Поисковое приложение от Яндекса. Продакшн-версии можно скачать по ссылкам: Android https://play.google.com/store/apps/details?id=ru.yandex.searchplugin iOS: https://itunes.apple.com/ru/app/яндекс/id1050704155?mt=8"
+  },
+    {
+    "key": "Прод",
+    "reformulation": ["Продакшен", "Продакшн", "Production"],
+    "short_description": "Официальная версия приложения",
+    "full_description": "Официальная версия приложения (НЕ тестовая), доступная для общего пользования"
+  },
+    {
+    "key": "Пул",
+    "reformulation": ["Pull"],
+    "short_description": "Запрос от клиента",
+    "full_description": "Запрос от клиента (Диск, Почта и т.д.) на предоставление данных от сервера"
+  },
+    {
+    "key": "Пуш",
+    "reformulation": ["Push"],
+    "short_description": "Запрос от сервера",
+    "full_description": "Запрос, инициируемый сервером, который клиент (Диск, Почта, ...) может принять или отклонить"
+  },
+    {
+    "key": "Синк",
+    "reformulation": ["Sync"],
+    "short_description": "Синхронизация",
+    "full_description": "Синхронизация (обмен данными)"
+  },
+    {
+    "key": "Тап",
+    "reformulation": ["Tap"],
+    "short_description": "Клик пальцем",
+    "full_description": "Клик пальцем по экрану/кнопке/строке и т.д. на мобильном устройстве"
+  },
+    {
+    "key": "ФАБ",
+    "reformulation": ["FAB", "Floating Action Button"],
+    "short_description": "Плавающая кнопка",
+    "full_description": "Плавающая кнопка, т.е. с эффектом нависания над остальной частью экрана. Примеры: в моб.почте: https://jing.yandex-team.ru/files/snejca/15421107.png ; в моб.диске: https://jing.yandex-team.ru/files/snejca/15431107.png"
+  },
+    {
+    "key": "Action Bar",
+    "reformulation": [],
+    "short_description": "Панель действий",
+    "full_description": "Панель действий, которая сочетает в себе заголовок и меню, упрощая навигацию и предоставляя быстрый доступ к частым операциям в моб.диске"
+  },
+    {
+    "key": "Action Sheet",
+    "reformulation": [],
+    "short_description": "Контрол в виде трёх точек",
+    "full_description": "Три точки справа вверху экрана в просмотрщике моб.диска: https://jing.yandex-team.ru/files/snejca/15451107.jpg"
+  },
+    {
+    "key": "ActionMod",
+    "reformulation": [],
+    "short_description": "Панель действий для выбранного объекта",
+    "full_description": "Панель действий для выбранного обьекта. Пример: https://jing.yandex-team.ru/files/snejca/15521107.jpg"
+  },
+    {
+    "key": "Air Drop",
+    "reformulation": [],
+    "short_description": "Технология передачи данных",
+    "full_description": "Технология передачи файлов по Wi-Fi и Bluetooth между apple устройствами"
+  },
+    {
+    "key": "Always on top",
+    "reformulation": ["Поверх"],
+    "short_description": "Окно располагается поверх других",
+    "full_description": "Термин применяется к окнам, например, когда одно окно должно перекрывать другие окна и прочие элементы интерфейса"
+  },
+    {
+    "key": "AppSwitcher",
+    "reformulation": ["App Switcher"],
+    "short_description": "Панель многозадачности",
+    "full_description": "Панель многозадачности (вызывается двойным нажатием на кнопку Home (ios))"
+  },
+    {
+    "key": "Aviary",
+    "reformulation": [],
+    "short_description": "Редактор фотографий",
+    "full_description": "Редактор фотографий, открывается из просмотрщика моб.диска по значку квадратик с карандашиком"
+  },
+    {
+    "key": "Back button",
+    "reformulation": [],
+    "short_description": "Кнопка Назад",
+    "full_description": "На Андроиде хардварная кнопка назад на телефоне"
+  },
+    {
+    "key": "Body",
+    "reformulation": ["Тело письма"],
+    "short_description": "Содержание письма",
+    "full_description": "Содержание и тело письма в почтовом ящике"
+  },
+    {
+    "key": "Compose",
+    "reformulation": ["Компоуз"],
+    "short_description": "Экран написания письма",
+    "full_description": "Экран написания письма в Яндекс.Почте"
+  },
+    {
+    "key": "CAB",
+    "reformulation": ["Contextual action bar"],
+    "short_description": "Временный action bar",
+    "full_description": "Временный action bar, который фактически перекрывает постоянный топ бар приложения и пропадает после сброса выделения или применения операции"
+  },
+    {
+    "key": "Control Center",
+    "reformulation": [],
+    "short_description": "Шторка управления устройством",
+    "full_description": "На iOS нижняя шторка управления устройством"
+  },
+    {
+    "key": "Cмоук тест",
+    "reformulation": ["Smoke testing", "Дымовой тест", "Дымовое тестирование"],
+    "short_description": "Минимальный набор тестов на явные ошибки",
+    "full_description": "Минимальный набор тестов на явные ошибки. Smoke-тестирование предназначено для проверки самых простых и очевидных кейсов, без которой любой другой вид тестирования будет неоправданно излишним. "
+  },
+    {
+    "key": "Fast scroll на iOS",
+    "reformulation": [],
+    "short_description": "",
+    "full_description": "Экран получаемый при нажатии на месяц на экране Фотосреза"
+  },
+    {
+    "key": "Folder list",
+    "reformulation": ["Список папок", "Фолдер лист"],
+    "short_description": "Список папок в почте",
+    "full_description": "В моб.почте состоит из трех секций: свитчера (переключателя) аккаунтов, списка папок и меток, настройки"
+  },
+    {
+    "key": "Folders and labels list",
+    "reformulation": ["Список папок и меток "],
+    "short_description": "Список папок и меток в почте",
+    "full_description": "Список папок и меток в моб.почте. Примерный внешний вид: https://jing.yandex-team.ru/files/snejca/16171107.png"
+  },
+    {
+    "key": "Full screen",
+    "reformulation": [],
+    "short_description": "Полноэкранный режим",
+    "full_description": "Полноэкранный режим"
+  },
+    {
+    "key": "Mailish",
+    "reformulation": ["Мейлиши"],
+    "short_description": "Вид аккаунтов",
+    "full_description": "Аккаунты, которые авторизуются в приложениях Яндекса, используя логин и пароль внешнего почтового сервиса (Google, Mail, Rambler, Microsoft Outlook)"
+  },
+    {
+    "key": "Navigation Drawer",
+    "reformulation": ["Навигационная секция"],
+    "short_description": "Боковая панель",
+    "full_description": "В моб.диске - боковая панель (боковое меню), которая выводит на экран основные навигационные опции приложения в левой части экрана. Она скрыта большую часть времени, и отображается по свайпу от левого края экрана или нажатию на кнопку с тремя полосками (Hamburger button) в Action Bar. Внешний вид: https://jing.yandex-team.ru/files/snejca/16191107.jpg"
+  },
+    {
+    "key": "Phonish",
+    "reformulation": ["Фониши"],
+    "short_description": "Вид аккаунтов",
+    "full_description": "Это аккаунты, живущие на мобильном, связанные только с номером телефона и использующие в качестве метода авторизации смс. Живут на ограниченном количестве сервисов (Такси, Музыка, Медицина, Парковки)"
+  },
+    {
+    "key": "TestFlight",
+    "reformulation": [],
+    "short_description": "",
+    "full_description": "Сервис, упрощающий тестирование приложений для iOS-устройств путем облегчения процесса сбора кодов тестовых устройств (UDID-ов), а также путем более легкого распространения подписанных для тестеров билдов. https://itunes.apple.com/ru/app/testflight/id899247664?mt=8"
+  },
+    {
+    "key": "UGC",
+    "reformulation": ["UGC-треки", "User-generated content"],
+    "short_description": "Треки добавленные пользователем",
+    "full_description": "Треки добавленные пользователем. Треки добавляются через веб-интерфейс (https://music.yandex.ru/ - Авторизоваться - Моя Музыка - Открыть плейлист - Нажать 'Загрузить трек' - следовать инструкциям)"
+  },
+    {
+    "key": "Аккаунт менеджер",
+    "reformulation": ["АМ"],
+    "short_description": "Экран авторизации",
+    "full_description": "Экран для регистрации/авторизации в приложении"
+  },
+    {
+    "key": "Алерт",
+    "reformulation": [],
+    "short_description": "Всплывающее",
+    "full_description": "Всплывающее диалоговое окно"
+  },
+    {
+    "key": "Алиас",
+    "reformulation": [],
+    "short_description": "Почтовый адрес",
+    "full_description": "Адрес, с которого будет отправлено письмо"
+  },
+    {
+    "key": "Альбомная ориентация",
+    "reformulation": ["Горизонтальная ориентация", "Лэндскейп", "Ландшафт"],
+    "short_description": "Горизонтальное положение девайса",
+    "full_description": "Переворот девайса в горизонтальное положение (ширина экрана больше его высоты)."
+  },
+    {
+    "key": "Бабл",
+    "reformulation": [],
+    "short_description": "Пузырёк с сообщением в чате",
+    "full_description": "Пузырёк с сообщением в чате. Пример: https://jing.yandex-team.ru/files/snejca/22231107.png"
+  },
+    {
+    "key": "Балансер",
+    "reformulation": [],
+    "short_description": "Распределитель нагрузки",
+    "full_description": "Распределитель нагрузки между серверами - балансировщик нагрузки"
+  },
+    {
+    "key": "Балун",
+    "reformulation": [],
+    "short_description": "Информационное сообщение",
+    "full_description": "'Выезжающее' на экран информационное сообщение. Пример: https://jing.yandex-team.ru/files/snejca/22251107.png"
+  },
+    {
+    "key": "Блюр",
+    "reformulation": ["Blur"],
+    "short_description": "Размытие",
+    "full_description": "Размытие изображения/объекта, чтобы с помощью контраста резкости фона и объекта на переднем плане облегчить восприятие нужного объекта"
+  },
+    {
+    "key": "Бургер",
+    "reformulation": ["Burger"],
+    "short_description": "Меню",
+    "full_description": "Иконка, при нажатии на которую появляется выпадушка с пунктами меню. Пример: https://jing.yandex-team.ru/files/snejca/22271107.png"
+  },
+    {
+    "key": "Бэдж",
+    "reformulation": ["Unread badge"],
+    "short_description": "Иконка непрочитанных писем",
+    "full_description": "Иконка с количеством непрочитанных писем на иконке приложения моб.почты"
+  },
+    {
+    "key": "Видеопросмотрщик",
+    "reformulation": [],
+    "short_description": "Приложение для просмотра видео",
+    "full_description": "Стандартное приложение, которым диск открывает видео"
+  },
+    {
+    "key": "Визивиг",
+    "reformulation": [],
+    "short_description": "Поле с возможностью редактирования текста",
+    "full_description": "Поле для написания и редактирования текста с возможностью применять к тексту различные стили и добавлять в текст вставки(картинки, смайлы). Пример: https://jing.yandex-team.ru/files/snejca/22311107.png"
+  },
+    {
+    "key": "Выпадушка",
+    "reformulation": [],
+    "short_description": "Выпадающий список",
+    "full_description": "Выпадающий список, например поделяшка (меню поделения в соц.сети) это та же выпадушка. Пример: https://jing.yandex-team.ru/files/snejca/22341107.png"
+  },
+    {
+    "key": "Групповые операции",
+    "reformulation": ["ГО"],
+    "short_description": "Работа с несколькими объектами",
+    "full_description": "Возможность работы сразу с несколькими объектами. В тач-версии почты вызывается по тапу на аватарку в списке писем. В моб.диске - по тапу на галку в топбаре"
+  },
+    {
+    "key": "Двухфакторная аутентификация",
+    "reformulation": ["2фа", "2fa"],
+    "short_description": "Способ авторизации в Я.Почте",
+    "full_description": "Механизм авторизации в Яндекс.Почте с одноразовым паролем. Подробнее описано здесь: https://yandex.ru/support/passport/authorization/twofa.html . Для подключения 2фа пользователю нужно следовать инструкции по ссылке https://passport.yandex.ru/profile/access/2fa. Также потребуется установить приложения Яндекс.Ключ (желательно, на отдельное устройство, но можно и на то, на котором идет тестирование). Пользователь с 2фа может авторизоваться, отсканировав QR-код или получив одноразовый пароль в приложении и введя его в обычное поле пароля."
+  },
+    {
+    "key": "Директ",
+    "reformulation": [],
+    "short_description": "Блок с рекламой",
+    "full_description": "Блок с рекламой"
+  },
+    {
+    "key": "Домик",
+    "reformulation": [],
+    "short_description": "Форма авторизации",
+    "full_description": "Основная форма авторизации. На ней есть поля логин-пароль, QR-код для авторизации с помощью Яндекс.Ключа, иконки соц.сетей для авторизации по соц.профилю, а также ссылки на Регистрацию и Восстановление."
+  },
+    {
+    "key": "Дропзона",
+    "reformulation": ["ДНД"],
+    "short_description": "",
+    "full_description": "Область, куда перетаскивается файл для загрузки. Все что выделено серым на скрине: https://jing.yandex-team.ru/files/snejca/22421107.png"
+  },
+    {
+    "key": "Желтый прыщ",
+    "reformulation": [],
+    "short_description": "Иконка непрочитанного письма",
+    "full_description": "Желтый кружок слева от ферстлайн непрочитанного письма. Как выглядит: https://jing.yandex-team.ru/files/snejca/22441107.png"
+  },
+    {
+    "key": "Заглушка",
+    "reformulation": [],
+    "short_description": "Замена основного контента",
+    "full_description": "Страница, показываемая вместо некоторого контента. Например, в случае, если нет сети или доступ к запрашиваемому содержимому по каким-то причинам запрещен. Пример: https://jing.yandex-team.ru/files/snejca/22451107.jpg"
+  },
+    {
+    "key": "Инбокс",
+    "reformulation": ["Inbox"],
+    "short_description": "папка 'Входящие'",
+    "full_description": "Папка 'Входящие' в почте"
+  },
+    {
+    "key": "Инлайн-аттач",
+    "reformulation": [],
+    "short_description": "Аттач в теле письма",
+    "full_description": "Аттач, вставленный в тело письма методом ДНД. Пример: https://jing.yandex-team.ru/files/snejca/22491107.png"
+  },
+    {
+    "key": "Инлайн-реплай",
+    "reformulation": [],
+    "short_description": "Разрыв цитирования",
+    "full_description": "Разрыв цитирования в ответном письме. Пример: https://jing.yandex-team.ru/files/snejca/22501107.png"
+  },
+    {
+    "key": "Карусель",
+    "reformulation": ["Аккаунт свитчер"],
+    "short_description": "Экран выбора аккаунта",
+    "full_description": "Экран выбора одного из зарегистрированных в системе аккаунтов. Пример 1: https://jing.yandex-team.ru/files/snejca/22531107.jpg Пример 2: https://jing.yandex-team.ru/files/snejca/22511107.jpg"
+  },
+    {
+    "key": "Каунтер",
+    "reformulation": ["Counter"],
+    "short_description": "Счётчик",
+    "full_description": "Счётчик"
+  },
+    {
+    "key": "Квикреплай",
+    "reformulation": ["КР", "Быстрый ответ"],
+    "short_description": "Поле для быстрого ответа",
+    "full_description": "Поле для быстрого ответа под телом входящего письма. Внешний вид: https://jing.yandex-team.ru/files/snejca/22561107.png"
+  },
+    {
+    "key": "Корень диска",
+    "reformulation": [],
+    "short_description": "Раздел 'Все файлы'",
+    "full_description": "Раздел 'Все файлы' в Яндекс.Диске"
+  },
+    {
+    "key": "Ксива",
+    "reformulation": [],
+    "short_description": "Сервер доставки пуш-уведомлений",
+    "full_description": "Сервер доставки пуш-уведомлений от бэкенда"
+  },
+    {
+    "key": "Кукуц",
+    "reformulation": [],
+    "short_description": "Сообщение о добавлении/удалении пользователя",
+    "full_description": "При добавлении или удалении пользователя из переписки в чате рисуется серая полоса с +/- имя пользователя"
+  },
+    {
+    "key": "Лайт-пользователь",
+    "reformulation": ["lite"],
+    "short_description": "Аккаунт, зарегистрированный с помощью стороннего емейла",
+    "full_description": "Аккаунт, зарегистрированный с помощью уже существующего стороннего емейла. Зарегистрировать лайта можно через форму регистрации https://passport.yandex.ru/registration/lite . На регистрации нажать 'Зарегистрироваться с уже имеющимся емейлом'. Далее заполнять все поля как обычно, а в поле логина - свой существующий емейл. На него придёт код подтверждения для завершения регистрации."
+  },
+    {
+    "key": "Локаль",
+    "reformulation": [],
+    "short_description": "Системный язык",
+    "full_description": "Системный язык (установленный в настройках тестируемого устройства)"
+  },
+    {
+    "key": "Лонгтап",
+    "reformulation": ["Long tap"],
+    "short_description": "Длительное нажатие",
+    "full_description": "Длительное нажатие"
+  },
+    {
+    "key": "Морда",
+    "reformulation": ["Main page"],
+    "short_description": "Главная страница сайта",
+    "full_description": "Главная страница сайта"
+  },
+    {
+    "key": "Море",
+    "reformulation": ["More"],
+    "short_description": "Кнопка открытия меню действий",
+    "full_description": "Кнопка открытия меню действий. Есть в свайп меню и тулбаре просмотра письма в моб.почте. Выглядит как многоточие: https://jing.yandex-team.ru/files/snejca/23071107.png"
+  },
+    {
+    "key": "Навигационная панель",
+    "reformulation": ["Navigation bar"],
+    "short_description": "Панель с кнопками навигации",
+    "full_description": "На веб-странице - полоска, содержащая гиперссылки (hyperlink) или навигационные клавиши, ведущие на другие страницы этого сайта. На смартфонах - виртуальная панель с кнопками. Есть на девайсах у которых нет хардварных(физических) кнопок. В Navigation bar есть кнопки 'Назад', 'Домой', 'Недавние экраны(приложения)'"
+  },
+    {
+    "key": "Нативный браузер",
+    "reformulation": ["Встроенный браузер", "Родной браузер"],
+    "short_description": "Встроенный изначально браузер",
+    "full_description": "Встроенный изначально, идущий вместе с прошивкой браузер. Так, например: для андроидов < 5.x.x - это noname Android браузер; для самсунгов - samsung internet; для miui - miui браузер; для тех где всего 1 браузер (тот же хром) - он и есть нативный. На десктопе: это, например, IE и EDGE в Windows"
+  },
+    {
+    "key": "Нотифайка",
+    "reformulation": [],
+    "short_description": "Уведомление",
+    "full_description": "Уведомление о новых событиях. Нотифайки в Я.Диске: https://jing.yandex-team.ru/files/snejca/23151107.png"
+  },
+    {
+    "key": "Оверлей",
+    "reformulation": ["Overlay"],
+    "short_description": "Иконки на папках",
+    "full_description": "Маленькие иконки на папках в Проводнике"
+  },
+    {
+    "key": "Окно шаринга",
+    "reformulation": [],
+    "short_description": "Окно для поделения",
+    "full_description": "Окно, которое появляется при нажатии кнопки шаринга (поделения)"
+  },
+    {
+    "key": "Омнибокс",
+    "reformulation": ["Omnibox"],
+    "short_description": "Поисковая строка",
+    "full_description": "Поисковая строка. Пример: https://jing.yandex-team.ru/files/snejca/23171107.png"
+  },
+    {
+    "key": "Паблик",
+    "reformulation": ["Public", "ПФ", "Паблик файла"],
+    "short_description": "Страница с публичным доступом",
+    "full_description": "Страница вида https://yadi.sk/i/0c7jophY39pFe7 Чтобы быстро создать паблик, можно расшарить любой файл в диске. При переходе по полученной ссылке мы попадаем на паблик"
+  },
+    {
+    "key": "Паранджа",
+    "reformulation": [],
+    "short_description": "Затемнение заднего фона",
+    "full_description": "Затемнение заднего фона"
+  },
+    {
+    "key": "Плашка unlim-а",
+    "reformulation": [],
+    "short_description": "Плашка безлимита в моб.диске",
+    "full_description": "Плашка безлимита в мобильном диске. Как выглядит: https://jing.yandex-team.ru/files/snejca/23211107.png"
+  },
+    {
+    "key": "Плейсходлер",
+    "reformulation": ["Placeholder"],
+    "short_description": "Текст - заглушка",
+    "full_description": "Текст, который используются в качестве заглушки полях и в формах ввода. Пример: https://jing.yandex-team.ru/files/snejca/23231107.png"
+  },
+    {
+    "key": "Поделяшка",
+    "reformulation": [],
+    "short_description": "Блок/попап импорта в соцсети",
+    "full_description": "Блок/попап импорта в соцсети. Пример 1: https://jing.yandex-team.ru/files/snejca/23251107.png Пример 2: https://jing.yandex-team.ru/files/snejca/23241107.png"
+  },
+    {
+    "key": "Поле 'Bcc' в компоузе",
+    "reformulation": ["Bcc field"],
+    "short_description": "Поле 'Скрытая копия'",
+    "full_description": "Поле 'Скрытая копия' на странице написания письма"
+  },
+    {
+    "key": "Поле 'Cc' в компоузе",
+    "reformulation": ["Cc field"],
+    "short_description": "Поле 'Копия'",
+    "full_description": "Поле 'Копия' на странице написания письма"
+  },
+    {
+    "key": "Поле 'From' в компоузе",
+    "reformulation": ["From field"],
+    "short_description": "Поле 'От кого'",
+    "full_description": "Поле 'От кого' на странице написания письма"
+  },
+    {
+    "key": "Поле 'To' в компоузе",
+    "reformulation": ["To field"],
+    "short_description": "Поле 'Кому'",
+    "full_description": "Поле 'Кому' на странице написания письма"
+  },
+    {
+    "key": "Пользователь с возможностью авторизации по соц.профилю",
+    "reformulation": [],
+    "short_description": "",
+    "full_description": "Простой полноценный пользователь, который привязал к своему аккаунту профиль соц.сети (всего можно привязать 6 соц.сетей) и разрешил авторизацию по соц.сети. На странице https://passport.yandex.ru/profile в разделе 'Социальные сети' можно привязать профили и обязательно в настройках установить галочку, разрешающую авторизоваться по этой соц.сети. После этого можно на домике авторизации нажать на иконку соответствующей соц.сети и авторизоваться своим пользователем."
+  },
+    {
+    "key": "Портальный аккаунт с возможностью авторизации с логином-телефоном",
+    "reformulation": [],
+    "short_description": "",
+    "full_description": "Обычный аккаунт Яндекса, у которого на странице https://passport.yandex.by/profile/phones включена настройка - использовать номер телефона как логин"
+  },
+    {
+    "key": "Портретная ориентация",
+    "reformulation": ["Вертикальная ориентация", "Книжная ориентация"],
+    "short_description": "Вертикальное положение девайса",
+    "full_description": "Положение девайса, когда ширина экрана меньше высоты"
+  },
+    {
+    "key": "Пошарить",
+    "reformulation": ["Поделиться"],
+    "short_description": "Опубликовать публичную ссылку",
+    "full_description": "Опубликовать публичную ссылку на файл/папку кнопкой шаринга"
+  },
+    {
+    "key": "Превью файла",
+    "reformulation": [],
+    "short_description": "Миниатюра",
+    "full_description": "Уменьшенное изображение оригинала"
+  },
+    {
+    "key": "Промолиба",
+    "reformulation": [],
+    "short_description": "Библиотека баннеров",
+    "full_description": "Библиотека баннеров с рекламой яндекс-приложений. (Как правило в тестируемом приложении может встретиться баннер с рекламой промолибы)"
+  },
+    {
+    "key": "Редирект",
+    "reformulation": ["Redirect"],
+    "short_description": "Перенаправление",
+    "full_description": "Перенаправление пользователя на другой адрес"
+  },
+    {
+    "key": "Саджест",
+    "reformulation": ["Саггест", "Suggest"],
+    "short_description": "Меню с подсказками",
+    "full_description": "Выпадающее меню с вариантами значения для выбора. Пример: https://jing.yandex-team.ru/files/snejca/23461107.png"
+  },
+    {
+    "key": "Сайдбар",
+    "reformulation": ["Sidebar"],
+    "short_description": "Боковая колонка сайта",
+    "full_description": "Боковая колонка сайта, в которой может располагаться и другая вспомогательная информация"
+  },
+    {
+    "key": "Свайп, свайпнуть",
+    "reformulation": ["Swipe"],
+    "short_description": "Специальный жест",
+    "full_description": "Движение пальцем по экрану девайса для пролистывания контента, вытягивания шторки и т.п.: https://jing.yandex-team.ru/files/snejca/23511107.png"
+  },
+    {
+    "key": "Свайпменю",
+    "reformulation": ["Swipe-menu"],
+    "short_description": "Меню, появляющееся при свайпе",
+    "full_description": "Меню, которое появляется при свайпе. Например в моб.почте: https://jing.yandex-team.ru/files/snejca/23531107.png"
+  },
+    {
+    "key": "Серп",
+    "reformulation": ["SERP", "Search Engine Results Page"],
+    "short_description": "Страница с результатами поиска",
+    "full_description": "Страница с результатами поиска. Пример: https://jing.yandex-team.ru/files/snejca/0001207.png"
+  },
+    {
+    "key": "Скрепка",
+    "reformulation": [],
+    "short_description": "Иконка добавления аттачей",
+    "full_description": "Иконка добавления аттачей к письму в Яндекс.Почте"
+  },
+    {
+    "key": "Скролл, скроллить",
+    "reformulation": ["Scroll"],
+    "short_description": "Пролистывание списков",
+    "full_description": "Жест, движение сверху в низ, для пролистывания списков"
+  },
+    {
+    "key": "Слайдер",
+    "reformulation": ["Slider"],
+    "short_description": "Превью картинок/видео",
+    "full_description": "Превью картинок и видеофайлов с кнопками. Пример: https://jing.yandex-team.ru/files/snejca/18201207.png"
+  },
+    {
+    "key": "Сниппет",
+    "reformulation": [],
+    "short_description": "Фрагмент текста",
+    "full_description": "Фрагмент текста применяемый в: поисковых системах, текстовых редакторах. Пример в моб.диске: https://jing.yandex-team.ru/files/snejca/18221207.png"
+  },
+    {
+    "key": "Снэк бар",
+    "reformulation": ["Snack bar"],
+    "short_description": "Узкая панель внизу экрана",
+    "full_description": "Узкая панель, появляющаяся на несколько секунд внизу экрана, с краткой информацией для пользователя. Пример: https://jing.yandex-team.ru/files/snejca/18231207.jpg"
+  },
+    {
+    "key": "Социальщик",
+    "reformulation": [],
+    "short_description": "Аккаунт, зарегистрированный через профиль соц.сетей",
+    "full_description": "Пользователь, зарегистрированный в Яндексе с помощью профиля из социальной сети. Это не полноценный пользователь, у него ограниченный набор прав и нету даже логина с паролем. Для регистрации такого пользователя необходимо, чтобы ни один обычный пользователь не разрешил ещё авторизацию по этому профилю из соц.сетей. Надо пройти на домик https://passport.yandex.ru/auth/, нажать на иконку соц.сети, появится диалоговое окно для регистрации нового пользователя. В нём нужно нажать 'Я новый пользователь' и социальщик будет зарегистрирован. Авторизоваться им возможно только аналогично - нажимая на иконку соц.сети. Почитать ещё можно здесь: https://yandex.ru/support/passport/social.html"
+  },
+    {
+    "key": "Сплешскрин",
+    "reformulation": ["Splash screen"],
+    "short_description": "Заставка",
+    "full_description": "Экран загрузки, картинка, например при запуске приложения"
+  },
+    {
+    "key": "Старт визард",
+    "reformulation": ["СВ"],
+    "short_description": "Экран приветствия",
+    "full_description": "Экран, который отображается у запущенного приложения в первый раз после добавления аккаунта"
+  },
+    {
+    "key": "Статика",
+    "reformulation": [],
+    "short_description": "Все статичные элементы",
+    "full_description": "Все статичные элементы"
+  },
+    {
+    "key": "Статус-бар",
+    "reformulation": ["Status Bar"],
+    "short_description": "",
+    "full_description": "Маленькая информативная панель в верхней части дисплея смартфона, где можно узнать время, заряд аккумулятора и т.д. Пример: https://jing.yandex-team.ru/files/snejca/118341207.jpg"
+  },
+    {
+    "key": "Табнейлы",
+    "reformulation": [],
+    "short_description": "Миниатюры",
+    "full_description": "Миниатюрки, которые мы видим в просмотрщике моб.диска , пока не прогрузилось превью"
+  },
+    {
+    "key": "Тайтл",
+    "reformulation": ["Title"],
+    "short_description": "Заголовок",
+    "full_description": "Заголовок чего-либо"
+  },
+    {
+    "key": "Тапахед ",
+    "reformulation": ["TapAhead"],
+    "short_description": "Подсказка",
+    "full_description": "Десктоп: подсказка в виде слова, которое вы предположительно вводите/хотите ввести. Отображается в поле ввода серыми буквами после ввода первой буквы. Тачи: подсказка в виде слов на серых плашках, которые вы предположительно вводите/хотите ввести"
+  },
+    {
+    "key": "Топбар",
+    "reformulation": ["Топ бар", "топ-бар"],
+    "short_description": "Панель вверху экрана",
+    "full_description": "Панель вверху экрана приложения на которой находятся функциональные кнопки и название текущего окна приложения. Пример 1: https://jing.yandex-team.ru/files/snejca/18421207.jpg Пример 2: https://jing.yandex-team.ru/files/snejca/18411207.jpg"
+  },
+    {
+    "key": "Тост",
+    "reformulation": ["Toast"],
+    "short_description": "Сообщение для пользователя",
+    "full_description": "Маленькое окошко внизу (на Android) или вверху (на IOS) экрана с краткой информацией для пользователя, появляющееся на несколько секунд. Пример: https://jing.yandex-team.ru/files/snejca/18431207.jpg"
+  },
+    {
+    "key": "Тред",
+    "reformulation": [],
+    "short_description": "Цепочка писем",
+    "full_description": "Цепочка писем с одной темой. Пример: https://jing.yandex-team.ru/files/snejca/18441207.png"
+  },
+    {
+    "key": "Троббер",
+    "reformulation": ["Спиннер"],
+    "short_description": "Индикатор выполнения",
+    "full_description": "Индикатор, что программа выполняет какое-то действие, выглядит как круговая стрелка"
+  },
+    {
+    "key": "Тулбар",
+    "reformulation": ["toolbar"],
+    "short_description": "Панель групповых операций",
+    "full_description": "Верхнее меню, в режиме групповых операций. В моб.диске: https://jing.yandex-team.ru/files/snejca/18461207.jpg"
+  },
+    {
+    "key": "Тултип",
+    "reformulation": ["Tooltip"],
+    "short_description": "Всплывающее окно",
+    "full_description": "Всплывающее окно с пояснением/названием"
+  },
+    {
+    "key": "Тумб",
+    "reformulation": ["Тумбнейл", "Тумба", "Тхамб"],
+    "short_description": "Миниатюра",
+    "full_description": "Миниатюра"
+  },
+    {
+    "key": "Тумблер",
+    "reformulation": ["Toggle", "тоггл"],
+    "short_description": "Переключатель",
+    "full_description": "Переключатель. Пример: https://jing.yandex-team.ru/files/snejca/18501207.png"
+  },
+    {
+    "key": "Туториал",
+    "reformulation": ["tutorial"],
+    "short_description": "Объяснение, инструкция",
+    "full_description": "Туториал содержит презентацию и краткую информацию о продукте. Встречается, например, при первом запуске мобильного диска"
+  },
+    {
+    "key": "Тхамбы",
+    "reformulation": ["Тумбы"],
+    "short_description": "",
+    "full_description": ""
+  },
+    {
+    "key": "Уникальный файл в Диске",
+    "reformulation": [],
+    "short_description": "Новый файл для аккаунта",
+    "full_description": "Новый файл, ни разу не загружаемый в облако ни с какого устройства"
+  },
+    {
+    "key": "Фавиконка",
+    "reformulation": [],
+    "short_description": "Иконка сайта",
+    "full_description": "Значок веб-сайта или веб-страницы, а также изображение лого или типа файла,рядом с именем вкладки. Пример 1: https://jing.yandex-team.ru/files/snejca/18521207.png Пример 2:https://jing.yandex-team.ru/files/snejca/18531207.png"
+  },
+    {
+    "key": "Фикс",
+    "reformulation": ["Fix"],
+    "short_description": "Исправление",
+    "full_description": "Исправление, поправить"
+  },
+    {
+    "key": "Фотопикер",
+    "reformulation": [],
+    "short_description": "Экран выбора фото",
+    "full_description": "На iOS экранчик с выбором фото и видео получаемый по нажатию на +"
+  },
+    {
+    "key": "Фотопросмотрщик",
+    "reformulation": [],
+    "short_description": "Приложение для открытия фото",
+    "full_description": "Стандартное приложение, которым диск открывает фото"
+  },
+    {
+    "key": "Фотосрез",
+    "reformulation": ["ФС"],
+    "short_description": "Раздел 'Все фото'",
+    "full_description": "Раздел 'Все фото' в Яндекс.Диске"
+  },
+    {
+    "key": "Футер",
+    "reformulation": ["Подвал", "footer"],
+    "short_description": "Нижняя часть страницы",
+    "full_description": "Нижняя часть веб-страницы с полезным содержанием (ссылками, формой обратной связи и т.д.). Пример: https://jing.yandex-team.ru/files/snejca/19011207.png"
+  },
+    {
+    "key": "Хедер",
+    "reformulation": ["Header", "шапка"],
+    "short_description": "Верхняя часть страницы",
+    "full_description": "Верхняя часть веб-страницы с полезным содержанием (ссылками, строкой поиска и т.д.). Пример: https://jing.yandex-team.ru/files/snejca/19031207.png"
+  },
+    {
+    "key": "Ховер",
+    "reformulation": ["Hover"],
+    "short_description": "Эффекты при наведении курсора",
+    "full_description": "Разного рода эффекты (всплывающие подписи, подсказки, плавные переходы, трансформация, ротация, увеличение, смещение и пр.), которые наблюдаются при наведении на них курсора мыши"
+  },
+    {
+    "key": "Хострут",
+    "reformulation": [],
+    "short_description": "Страница почты для незалогина",
+    "full_description": "Страница почты для неавторизованного пользователя. Пример: https://jing.yandex-team.ru/files/snejca/19041207.png"
+  },
+    {
+    "key": "Хоткей",
+    "reformulation": ["Hotkey"],
+    "short_description": "Горячая клавиша",
+    "full_description": "Сочетание клавиш, которое служит для ускорения выполнения тех или иных действий"
+  },
+    {
+    "key": "Центр Нотификаций",
+    "reformulation": ["Notification Center"],
+    "short_description": "Шторка с уведомлениями",
+    "full_description": "Верхняя шторка со списком уведомлений на мобильном устройстве"
+  },
+    {
+    "key": "Экран Виста на Android",
+    "reformulation": [],
+    "short_description": "Экран в Я.Диске",
+    "full_description": "Экран получаемый при нажатии на месяц на экране Фотосреза"
+  },
+    {
+    "key": "Ябл",
+    "reformulation": [],
+    "short_description": "Сформированный адрес",
+    "full_description": "Сформированный адрес в полях Кому/Копия/Скрытая копия на странице письма в Почте. Пример: https://jing.yandex-team.ru/files/snejca/19101207.jpg"
+  },
+    {
+    "key": "Яндекс.Диск",
+    "reformulation": [],
+    "short_description": "Сервис для хранения папок/файлов",
+    "full_description": "Облачный сервис, который позволяет хранить файлы и папки удаленно и получать к ним доступ через веб, мобильные и десктопные клиенты, а также делиться ими с помощью публичных ссылок. Кроме того есть общие папки (в кейсах они обычно называются ОП), которые дают доступ к папке сразу нескольким пользователям для совместной работы."
+  },
+    {
+    "key": "Яндекс.Паспорт",
+    "reformulation": [],
+    "short_description": "Сервис регистрации в Яндексе",
+    "full_description": "Сервис авторизации, регистрации и восстановления доступа пользователей https://passport.yandex.ru/"
+  },
+    {
+    "key": "Яндекс.Почта",
+    "reformulation": [],
+    "short_description": "Служба электронной почты",
+    "full_description": "Бесплатная служба электронной почты, позволяющая писать и получать письма, настраивать сбор писем с других почтовых ящиков, фильтровать входящую почту, искать нужную информацию в ящике и многое другое"
+  },
+    {
+    "key": "Ячейка Автозагрузки",
+    "reformulation": [],
+    "short_description": "Блок с превью загружаемого фото",
+    "full_description": "В моб.диске - полоса в верхней части экрана с превью фото, которые автозагружаются в данный момент и прогресс баром (когда идет процесс автозагрузки)"
+  }
+ ]
