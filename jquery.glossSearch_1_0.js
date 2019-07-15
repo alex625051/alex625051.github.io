@@ -79,7 +79,7 @@
                             //добавление элементов в родительский <div>
                             var mouseDown = false;
                         $this.addClass('ui-widget')
-                        $this.append('<div class="input_bordering" style="border: solid rgb(255, 228, 120);width:100%;">\
+                        $this.append('<div class="input_bordering" style="background-color:white;border: solid rgb(255, 228, 120);width:100%;">\
                             <input class="glossSearch_widget_inputing" style="' + glossSearch_widget_inputing_css + '">\
                             <span class="input_clear" style="margin:5px;color:grey;cursor:pointer;">x</span>\
                             </div>')
