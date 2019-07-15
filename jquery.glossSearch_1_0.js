@@ -84,7 +84,7 @@
                             <span class="input_clear" style="margin:5px;margin-top:2.5;float:right;color:grey;cursor:pointer;">x</span>\
                             </div>')
 
-                        $this.append('<div style="position:relative;width:calc(100% - 30px;)">\
+                        $this.append('<div style="position:relative;width:calc(100% - 30px)">\
                             <div class="glossSearch_full_description" style="' + glossSearch_full_description_css + '">\
                             </div></div>')
                         //////////////events
