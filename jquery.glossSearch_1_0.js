@@ -80,7 +80,7 @@
                             var mouseDown = false;
                         $this.addClass('ui-widget')
                         $this.append('<div class="input_bordering" style="background-color:white;border: solid rgb(255, 228, 120);width:100%;">\
-                            <input class="glossSearch_widget_inputing" style="' + glossSearch_widget_inputing_css + '">\
+                            <input placeholder="Поиск по глоссарию" class="glossSearch_widget_inputing" style="' + glossSearch_widget_inputing_css + '">\
                             <span class="input_clear" style="margin:5px;margin-top:2.5;float:right;color:grey;cursor:pointer;">x</span>\
                             </div>')
 
