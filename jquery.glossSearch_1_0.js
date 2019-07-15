@@ -70,7 +70,7 @@
                             '
                             //css для <input>
                             var glossSearch_widget_inputing_css = '\
-                            width:calc(100% - 25px);\
+                            width:calc(100% - 35px);\
                             padding: 4px 26px 4px 8px;\
                             font-size: 13px;\
                             border:0;\
@@ -222,7 +222,7 @@
                             return '<a href="' + p1 + '" target="_blank">' + p1 + '</a>'
                         }
                         function _replacer_screenshots(str, p1, offset, s) {
-                            return '_blank"><img src="' + p1 + '"  width="' + settings.screenShotWidth + '" align="right" style="margin:5px;"></a>'
+                            return '_blank"><img src="' + p1 + '"  width="' + settings.screenShotWidth + '" align="right" style="float:right;margin:5px;"></a>'
                         }
                         if (options.source === 'ajax_to_S3') {
                             //из запроса ajax
