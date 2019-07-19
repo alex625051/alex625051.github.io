@@ -1,0 +1,38 @@
+var sample = 
+[
+  {
+    "key": "2pane",
+    "reformulation": [],
+    "short_description": "2-х панельный интерфейс почты",
+    "full_description": "2-х панельный интерфейс почты. ((https://jing.yandex-team.ru/files/link551/2pane.png_279321_2019-06-04_21-19-48.png Скриншот))"
+  },
+  {
+    "key": "App",
+    "reformulation": [
+      "Апп",
+      "App",
+      "Application",
+      "Приложение"
+    ],
+    "short_description": "Мобильное приложение",
+    "full_description": "Мобильное приложение - программное обеспечение, предназначенное для работы на смартфонах, планшетах"
+  },
+  {
+    "key": "PTR",
+    "reformulation": [
+      "Pull To Refresh",
+      "ПтР",
+      "p2r"
+    ],
+    "short_description": "Потянуть экран вниз для рефреша страницы",
+    "full_description": "Действие: потянуть экран вниз для рефреша страницы"
+  },
+  {
+    "key": "Навигационная цепочка",
+    "reformulation": [
+      "Хлебные крошки"
+    ],
+    "short_description": "",
+    "full_description": "Путь по файловой системе от корня до рабочего каталога самого глубокого уровня - https://jing.yandex-team.ru/files/link551/Glossarii__Wiki_2019-06-04_21-21-25.png"
+  }
+]
