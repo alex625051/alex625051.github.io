@@ -2,7 +2,7 @@
  * плагин jQuery интерфейса глоссария
  * автор: @westeraspect
  * лицензия MIT
- * ver. 1.0
+ * ver. 1.2
  */
 /*!
  * requred: jquery.js, jquery-ui.js, jquery-ui.css
@@ -16,7 +16,8 @@
  *      'minLength': {Number}, 			//	минимальная длина слова для предоставления вариантов (default:2)
  *		'url':{URL},					// для доступа по GET запросу на ресурс через синхронный Ajax (default:'https://alex625051.github.io/Glossarijj.json' )
  *      'screenShotWidth': {String}, 	//	ширина картинки для предпросмотра скриншотов в px, % (default:'100px')
- *		'source':{String/Array_of_objects} 			//	'ajax_to_S3' для запроса к серверу с данными, или массив объектов
+ *		'source':{String/Array_of_objects}, 			//	'ajax_to_S3' для запроса к серверу с данными, или массив объектов
+ *		'button_position':{String}						//'left'/'right'/null
  *			}
  *	$(div).glossSearch('destroy') 		// деактивировать плагин и удалить массив с данными window.glossSearch_source
  *
@@ -45,7 +46,8 @@
         'maxResults': 10,
         'minLength': 2,
         'screenShotWidth': '100px',
-        'url': 'https://alex625051.github.io/Glossarijj.json'  //ссылка для запроса таблицы с данными
+        'url': 'https://alex625051.github.io/Glossarijj.json',  //ссылка для запроса таблицы с данными
+		'button_position':'left'
 		
 
       }, options);
@@ -56,42 +58,82 @@
         function add_plugin() {
           if (window.glossSearch_source) {
             var req;
+			//css для кнопки
+            var glossSearch_main_container_css = {
+                            'z-index':'99999',
+							'display':'flex',
+			}
+			//css для кнопки
+            var glossSearch_button_css = '\
+	cursor: pointer;\
+	margin: 0px;\
+    width: 21px;\
+    text-align: center;\
+    z-index: 99999;\
+    padding: 4px;\
+    font-size: 13px;\
+    border: solid rgb(255, 219, 77);\
+    background-color: rgb(255, 219, 77);\
+                            '
             //css для поля полной информации
             var glossSearch_full_description_css = '\
                             position:absolute;\
                             margin-top:5px;\
-                            margin-left:0px;\
+                            margin-left:3px;\
+                            margin-right:3px;\
                             width:100%;\
                             z-index:99999;\
                             display:none;\
                             padding:15px;\
-                            box-shadow: rgb(170, 170, 170) 0px 17px 20px 20px;\
-                            border: solid rgb(237, 229, 71);\
-                            background-color: rgb(246, 245, 243);\
+                            box-shadow: rgba(0, 0, 0, 0.26) 0px 1px 5px 3px;\
+                            border: 1px solid rgb(255, 219, 77);\
+                            background-color: white;\
                             '
             //css для <input>
             var glossSearch_widget_inputing_css = '\
-                            width:calc(100% - 35px);\
-                            padding: 4px 26px 4px 8px;\
-                            font-size: 13px;\
-                            border:0;\
-                            outline: 0 !important;\
+	padding: 4px 30px 4px 8px;\
+    font-size: 13px;\
+    border: 0;\
+    outline: 0 !important;\
+    width: 100%;\
                             '
             //добавление элементов в родительский <div>
             var mouseDown = false;
-            $this.addClass('ui-widget')
-            $this.append('<div class="input_bordering" style="background-color:white;border: solid rgb(255, 228, 120);width:100%;">\
+			$this.css(glossSearch_main_container_css)
+			
+			$this.append('<div class="gloss_container" style="width: 100%;visibility:hidden;"></div>')
+			var gloss_container = $this.find(".gloss_container")
+			var width_full_gloss =$this.outerWidth(true);
+			var width_space 	= $(window).outerWidth(true)
+			var position_gloss = $this.offset()
+			var this_in_left_side = (position_gloss.left/width_space) <= 0.5
+			
+			if (!options.button_position){
+			if (this_in_left_side){
+				$this.prepend('<div class="gloss_button" style="'+glossSearch_button_css+'">?</div>')
+			}  
+				if (!this_in_left_side){
+				$this.append('<div class="gloss_button" style="'+glossSearch_button_css+'">?</div>')
+			} 
+			} else {
+			if (options.button_position=="left"){
+				$this.prepend('<div class="gloss_button" style="'+glossSearch_button_css+'">?</div>')
+			}  
+				if (options.button_position=="right"){
+				$this.append('<div class="gloss_button" style="'+glossSearch_button_css+'">?</div>')
+			} 
+			}
+            gloss_container.append('<div class="input_bordering" style="background-color: white;border: solid rgb(255, 219, 77);width: 100%;display:flex;position:relative;">\
+							\
                             <input placeholder="Поиск по глоссарию" class="glossSearch_widget_inputing" style="' + glossSearch_widget_inputing_css + '">\
-                            <span class="input_clear" style="margin:5px;margin-top:2.5;float:right;color:grey;cursor:pointer;">x</span>\
+                            <div class="input_clear" style="padding: 4px;margin-top: 2.5;font-size: 13px;color: grey;cursor: pointer;position:absolute;right:0px;">x</div>\
                             </div>')
 
-            $this.append('<div style="position:relative;width:calc(100% - 30px)">\
+            gloss_container.append('<div style="position:relative;width:calc(100% - 30px)">\
                             <div class="glossSearch_full_description" style="' + glossSearch_full_description_css + '">\
                             </div></div>')
             //////////////events
-            $this.find("img").on('click', function() {
-              alert('!!!!!!!!!!!')
-            })
+           
             $this.find(".glossSearch_full_description").on('mousedown', function(e) {
               if (e.target.closest('a')) {
                 mouseDown = true;
@@ -108,6 +150,15 @@
 
               }
               mouseDown = false;
+            })
+			$this.find(".gloss_button").on('click', function() {
+				if ($(this).html()=='X'){
+					gloss_container.css('visibility','hidden')
+					$(this).html('?')
+				} else {
+					gloss_container.css('visibility','visible')
+					$(this).html('X')
+				}
             })
             $this.find(".glossSearch_widget_inputing").on('keypress', function() {
               $this.find(".glossSearch_full_description").html('').hide()
@@ -279,23 +330,7 @@
         return "<span style='font-weight:bold;color:Blue;'>" + p1 + "</span>"
       }
     },
-    addUI: function(options) {
-      // defaults
-      var settings = $.extend({
-        'maxResults': 10,
-        'minLength': 2,
-        'screenShotWidth': '100px',
-        'url': 'https://alex625051.github.io/Glossarijj.json' //ссылка для запроса таблицы с данными
-
-      }, options);
-
-      return this.each(function() {
-
-          var $this = $(this)
-        } //this.each
-      );
-
-    },
+  
     hide: function() {
       // ...
     },
