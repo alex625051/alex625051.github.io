@@ -93,11 +93,11 @@
                             '
             //css для <input>
             var glossSearch_widget_inputing_css = '\
-	padding: 4px 32px 4px 8px;\
+	padding: 4px 0px 4px 8px;\
     font-size: 13px;\
     border: 0;\
     outline: 0 !important;\
-    width:calc(100% - 40px);\
+    width:calc(100% - 8px);\
                             '
             //добавление элементов в родительский <div>
             var mouseDown = false;
