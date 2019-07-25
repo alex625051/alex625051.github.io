@@ -62,6 +62,8 @@
             var glossSearch_main_container_css = {
                             'z-index':'99999',
 							'display':'flex',
+							 'z-index':'99999'
+
 			}
 			//css для кнопки
             var glossSearch_button_css = '\
