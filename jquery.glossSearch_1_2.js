@@ -79,9 +79,9 @@
             var glossSearch_full_description_css = '\
                             position:absolute;\
                             margin-top:5px;\
-                            margin-left:3px;\
-                            margin-right:3px;\
-                            width:100%;\
+                            margin-left:0px;\
+                            margin-right:0px;\
+                            width:calc(100% - 29px);\
                             z-index:99999;\
                             display:none;\
                             padding:15px;\
@@ -91,17 +91,17 @@
                             '
             //css для <input>
             var glossSearch_widget_inputing_css = '\
-	padding: 4px 30px 4px 8px;\
+	padding: 4px 32px 4px 8px;\
     font-size: 13px;\
     border: 0;\
     outline: 0 !important;\
-    width: 100%;\
+    width:calc(100% - 40px);\
                             '
             //добавление элементов в родительский <div>
             var mouseDown = false;
 			$this.css(glossSearch_main_container_css)
 			
-			$this.append('<div class="gloss_container" style="width: 100%;visibility:hidden;"></div>')
+			$this.append('<span class="gloss_container" style="width: calc(100% - 30px);position:relative;	visibility:hidden;"></span>')
 			var gloss_container = $this.find(".gloss_container")
 			var width_full_gloss =$this.outerWidth(true);
 			var width_space 	= $(window).outerWidth(true)
@@ -110,28 +110,30 @@
 			
 			if (!options.button_position){
 			if (this_in_left_side){
-				$this.prepend('<div class="gloss_button" style="'+glossSearch_button_css+'">?</div>')
+				$this.prepend('<span class="gloss_button" style="'+glossSearch_button_css+'">?</span>')
 			}  
 				if (!this_in_left_side){
-				$this.append('<div class="gloss_button" style="'+glossSearch_button_css+'">?</div>')
+				$this.append('<span class="gloss_button" style="'+glossSearch_button_css+'">?</span>')
 			} 
 			} else {
 			if (options.button_position=="left"){
-				$this.prepend('<div class="gloss_button" style="'+glossSearch_button_css+'">?</div>')
+				$this.prepend('<span class="gloss_button" style="'+glossSearch_button_css+'">?</span>')
+				var pad="33"
 			}  
 				if (options.button_position=="right"){
-				$this.append('<div class="gloss_button" style="'+glossSearch_button_css+'">?</div>')
+				$this.append('<span class="gloss_button" style="'+glossSearch_button_css+'border-left: 0;'+'">?</span>')
+				var pad="37"
 			} 
 			}
-            gloss_container.append('<div class="input_bordering" style="background-color: white;border: solid rgb(255, 219, 77);width: 100%;display:flex;position:relative;">\
-							\
+            gloss_container.append('<div class="input_bordering" style="background-color: white;border: solid rgb(255, 219, 77);position:relative;width: 100%;">\
                             <input placeholder="Поиск по глоссарию" class="glossSearch_widget_inputing" style="' + glossSearch_widget_inputing_css + '">\
-                            <div class="input_clear" style="padding: 4px;margin-top: 2.5;font-size: 13px;color: grey;cursor: pointer;position:absolute;right:0px;">x</div>\
+                            \
                             </div>')
 
-            gloss_container.append('<div style="position:relative;width:calc(100% - 30px)">\
+            gloss_container.append('<div style="position:relative;width:100%;class="glossSearch_full_description_container">\
                             <div class="glossSearch_full_description" style="' + glossSearch_full_description_css + '">\
                             </div></div>')
+gloss_container.append('<span class="input_clear" style="top: 0px;padding: 4px;font-size: 13px;color: grey;cursor: pointer;position:absolute;right:5px;">x</span>')
             //////////////events
            
             $this.find(".glossSearch_full_description").on('mousedown', function(e) {
