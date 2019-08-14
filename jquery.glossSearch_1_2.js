@@ -166,7 +166,7 @@ gloss_container.append('<span class="input_clear" style="top: 0px;padding: 4px;f
 					$(this).html('X')
 				}
             })
-            $this.find(".glossSearch_widget_inputing").on('keyup change', function() {
+            $this.find(".glossSearch_widget_inputing").on('input', function() {
               $this.find(".glossSearch_full_description").html('').hide()
 			  if ($(this).val()==""){ 
 				$this.find(".input_clear").hide()
