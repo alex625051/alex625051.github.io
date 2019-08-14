@@ -156,14 +156,14 @@ gloss_container.append('<span class="input_clear" style="top: 0px;padding: 4px;f
               mouseDown = false;
             })
 			$this.find(".gloss_button").on('click', function() {
-				if ($(this).html()=='\u00D7'){
+				if ($(this).html()=='X'){
 					$this.find(".input_clear").click()
 					gloss_container.css('visibility','hidden')
 					$(this).html('?')
 					
 				} else {
 					gloss_container.css('visibility','visible')
-					$(this).html('&times;')
+					$(this).html('X')
 				}
             })
             $this.find(".glossSearch_widget_inputing").on('keyup change', function() {
