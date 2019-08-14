@@ -57,7 +57,7 @@
 
         function add_plugin() {
           if (window.glossSearch_source) {
-            var req;
+            var requ;
 			//css для кнопки
             var glossSearch_main_container_css = {
                             'z-index':'99999',
@@ -135,7 +135,7 @@
             gloss_container.append('<div style="position:relative;width:100%;class="glossSearch_full_description_container">\
                             <div class="glossSearch_full_description" style="' + glossSearch_full_description_css + '">\
                             </div></div>')
-gloss_container.append('<span class="input_clear" style="top: 0px;padding: 4px;font-size: 13px;color: grey;cursor: pointer;position:absolute;right:5px;">x</span>')
+gloss_container.append('<span class="input_clear" style="top: 0px;padding: 4px;font-size: 20px;color: grey;cursor: pointer;position:absolute;right:5px;display:none;">&#215;</span>')
             //////////////events
            
             $this.find(".glossSearch_full_description").on('mousedown', function(e) {
@@ -150,29 +150,40 @@ gloss_container.append('<span class="input_clear" style="top: 0px;padding: 4px;f
             $this.find(".glossSearch_widget_inputing").on('blur', function() {
               if (!mouseDown) {
                 $this.find(".glossSearch_full_description").html('').hide()
-                $this.find(".glossSearch_widget_inputing").val(req || "")
+                $this.find(".glossSearch_widget_inputing").val(requ || "")
 
               }
               mouseDown = false;
             })
 			$this.find(".gloss_button").on('click', function() {
-				if ($(this).html()=='X'){
+				if ($(this).html()=='\u00D7'){
+					$this.find(".input_clear").click()
 					gloss_container.css('visibility','hidden')
 					$(this).html('?')
+					
 				} else {
 					gloss_container.css('visibility','visible')
-					$(this).html('X')
+					$(this).html('&times;')
 				}
             })
-            $this.find(".glossSearch_widget_inputing").on('keypress', function() {
+            $this.find(".glossSearch_widget_inputing").on('keyup change', function() {
               $this.find(".glossSearch_full_description").html('').hide()
+			  if ($(this).val()==""){ 
+				$this.find(".input_clear").hide()
+				requ=""
+			  } else {
+				$this.find(".input_clear").show()  
+			  }
             })
+
             $this.find(".glossSearch_widget_inputing").on('focus', function() {
               $this.find(".glossSearch_widget_inputing").select()
             })
             $this.find(".input_clear").on('click', function() {
               $this.find(".glossSearch_widget_inputing").val('')
               $this.find(".glossSearch_full_description").html('').hide()
+			  $this.find(".input_clear").hide()
+			  requ=""
             })
             var bbox = $this
             var glossSearch_full_description = $this.find(".glossSearch_full_description")
@@ -203,7 +214,7 @@ gloss_container.append('<span class="input_clear" style="top: 0px;padding: 4px;f
                 }
                 full = full + ui.item.full_description
                 glossSearch_full_description.html(full).show();
-                $this.find(".glossSearch_widget_inputing").val(req)
+                $this.find(".glossSearch_widget_inputing").val(requ)
                 $this.find(".glossSearch_widget_inputing").focus().select()
                 /*ui.item будет содержать выбранный элемент*/
                 return false
@@ -225,7 +236,7 @@ gloss_container.append('<span class="input_clear" style="top: 0px;padding: 4px;f
 
               source: function(request, response) {
                 var results = $.ui.autocomplete.filter(window.glossSearch_source, request.term);
-                req = request.term
+                requ = request.term
                 response(results.slice(0, this.options.maxResults));
               }
             });
