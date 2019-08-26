@@ -607,8 +607,8 @@ var iframeDoc = this2.contentWindow.document;
 	var content=iframeDoc.querySelector("iframe")
 	console.log(iframeDoc.querySelector("meta").getAttribute("content"))
   this2.style.backgroundColor = "red";
-  this2.setAttribute('height', content.getAttribute(height))
-  this2.setAttribute('width', content.getAttribute(width))
+  this2.setAttribute('height', content.getAttribute("height"))
+  this2.setAttribute('width', content.getAttribute("width"))
 
 			
 };
