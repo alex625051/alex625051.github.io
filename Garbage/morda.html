@@ -604,8 +604,14 @@ Array.from(img).forEach(im=>{
 	
 function readiframe (this2) {
 var iframeDoc = this2.contentWindow.document;
+	var content=iframeDoc.querySelector("meta").getAttribute("content")
+var parser = new DOMParser()
+  , doc = parser.parseFromString(content, "text/xml");
 	console.log(iframeDoc.querySelector("meta").getAttribute("content"))
   this2.style.backgroundColor = "red";
+  this2.setAttribute('height', doc.getAttribute(height))
+  this2.setAttribute('width', doc.getAttribute(width))
+
 			
 };
 
