@@ -1,0 +1,188 @@
+.fullPage {
+  background-color: #EFF6FF;
+  width: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+}
+.theTitle {
+  font-size:0.6em;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  width: 720px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 8px 5px;
+  margin: auto;
+}
+
+.backImg {
+  width: 100%;
+}
+
+.side {
+  width: 50%;
+  background-color: #FFFFFF;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.rightSide>div {
+  max-height: 10%;
+  width: 85%;
+  margin: 0 auto;
+}
+
+#Capa_1 {
+  width: 1.0em;
+  margin-right: 1em;
+}
+
+#Capa_2 {
+  width: 1.0em;
+  height: 1.0em;
+  margin-right: 0.2em;
+}
+
+.b_fb {
+  background-color: #255B9B;
+}
+
+.b_ld {
+  background-color: #0076B6;
+}
+.buttonSocial {
+  padding: 0.6em;
+  font-size: 0.6em;
+  vertical-align: middle;
+  color: white;
+  width: 42%;
+
+}
+.buttonsHere {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+
+}
+.buttonsHere2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+
+}
+.buttonsHere2 > div{
+  width:42%;
+  border: solid 1px;
+  font-size:0.6em;
+}
+.buttonsHere2  input{ 
+  border:none;
+  width:90%;
+}
+.buttonsHere3 {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  font-size:0.6em;
+}
+
+.orLine {
+  /* Чтобы спрятать часть линий, которые 
+    ** будут вылазить за пределы блока */
+  overflow: hidden;
+  /* Выравнивание заголовка по центру, 
+    ** можно использовать left, right */
+  text-align: center;
+  /* Тут можно добавить другие стили для заголовка */
+  font-size: 0.7em;
+}
+
+.orLine span {
+  /* Стили тега обертки для заголовков 
+    ** в несколько строк */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.orLine:before,
+.orLine:after {
+  /* Обязательно указываем пустое свойство content, 
+    ** иначе псевдоэлементы не появятся на сайте */
+  content: "";
+  /* Указываем что наши линии будут строчно-блочные и 
+    ** выравнивание по высоте - по центру */
+  display: inline-block;
+  vertical-align: middle;
+  /* Задаем ширину 100% и выбираем высоту линии, 
+    ** в нашем примере она равна 4 пикселям */
+  width: 70%;
+  height: 1px;
+  /* Добавляем цвет для линии */
+  background-color: #EEEEEE;
+  /* Добавляем пседоэлемантам возможность изменить 
+    ** позицию линии, для создания отступов от текста */
+  position: relative;
+}
+
+.orLine:before {
+  /* Смещаем левую линию на 100% влево, чтобы линия 
+    ** встала рядом с текстом слева */
+  margin-left: -100%;
+  /* Указываем в пикселях отступ линии от текста заголовка */
+  left: -14px;
+}
+
+.orLine:after {
+  /* Смещаем правую линию на 100% вправо, чтобы 
+    ** линия встала рядом с текстом справа */
+  margin-right: -100%;
+  /* Указываем в пикселях отступ линии от текста заголовка */
+  right: -14px;
+}
+
+:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.typeInv,
+.secondQu,
+.agreeTerms {
+  font-size: 0.6em;
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.createAcc {
+  margin: 0 auto;
+  padding: 0.6em;
+  font-size: 0.6em;
+  vertical-align: middle;
+  color: white;
+  padding-right: 3em;
+  max-width: 40%;
+  background-color: #3698FB;
+  text-align: center;
+}
+
