@@ -19,6 +19,7 @@ header, main {
   justify-content: space-around;
   align-items: center;
   margin-left: 1em;
+  
 }
 
 .status::after {
