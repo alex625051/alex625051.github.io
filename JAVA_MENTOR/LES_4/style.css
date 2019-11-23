@@ -1,0 +1,94 @@
+body {
+  font-family: TTLakes;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.25em;
+  color: black;
+  background-color: #F8F8F8;
+}
+
+header, main {
+  margin: 20px 20px;
+}
+
+.request {
+  cursor: pointer;
+  display: inline-flex;
+  background: none;
+  border: none;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 1em;
+}
+
+.status::after {
+  background-image: url('icon2.png');
+  background-size: 4em;
+}
+
+.image {
+  margin: 0 0.5em 0 0.5em;
+}
+
+.feedback {}
+
+h1 {}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.main_menu {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  font-weight: 100;
+}
+
+[type="radio"] {
+  display: none;
+}
+
+input:checked+.menu_item {
+  border: 2px solid #B8FFEC;
+  border-radius: 7%;
+  background: white;
+}
+
+.menu_item {
+  padding: 0.5em 1.0em;
+  cursor: pointer;
+  white-space: nowrap;
+  margin: 5px 0px;
+}
+
+.main_text {
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: space-between;
+}
+
+figure.logo_side {
+  flex: 1 1 auto;
+  margin: 0;
+  width: 100%;
+}
+
+figure.logo_side .logo {
+  flex: 1 1 auto;
+  margin: 0;
+  width: 100%;
+}
+
+.article {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.next {
+  cursor: pointer;
+}

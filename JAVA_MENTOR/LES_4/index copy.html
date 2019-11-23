@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="h1">Услуги и сервисы</h1>
+    <div class="feedback">
+      <button class="order"><div class="buttonText">Оставить заявку</div><image class='image' src="icon0006.png" width="20em"></image></button>
+      <button class="status">Статус ремонта<image class='image' src="icon2.png" width="20em"></image></button>
+    </div>
+  </header>
+ <main class="master_container">
+   <div class="main_menu">
+     <button class="button">Ремонтируемые бренды</button>
+     <button class="button">Ремонтируемые устройства</button>
+     <button class="button">Цены на услуги</button>
+     <button class="button">Адреса сервисных центров</button>
+     <button class="button">Специальные цены</button>
+     <button class="button">Отзывы</button>
+   </div>
+
+   <div class="main_text">
+      <article class="article">
+          <p>Мы являемся авторизованным сервисным центром по ремонту техники Dell 
+            Только у нас вы можете отремонтировать свой ноутбук Dell c Официальной гарантией производителя.</p>
+
+         <p> Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, 
+           что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
+          очередь, советуют нас родным и близким.</p>
+          <nav>
+              <button class='button'>
+                <image class='image' src="pig4.png" alt="next" width="10em"></image>
+                <div class="buttonText">Читать далее</div> 
+              </button>
+            </nav>
+        </article>
+
+       
+      <figure>
+          <img class="logo" src="logo.png" alt="Логотип CSP">
+      </figure>
+   </div>
+
+ </main>
+
+
+
+
+
+
+
+  <style>
+ body {
+    color:black;
+    background-color:#F8F8F8;
+}
+button {
+  display:inline-flex;
+    background:none;
+    border:none;
+    justify-content: space-around;
+    align-items: center;
+}
+.status::after {
+background-image: url('icon2.png');
+background-size: 2em;
+}
+.image {
+    margin:0 0.5em 0 0.5em;
+}
+.feedback{
+}
+h1{
+}
+header{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+}
+.main_menu {
+  display:inline-flex;
+  flex-wrap: nowrap;
+align-content: space-around;
+}
+.button {
+  white-space:nowrap;
+wrap  :wrap;
+margin:5px 0px;
+}
+.main_text{
+  display:flex;
+  flex-wrap: nowrap;
+align-content: space-around;
+}
+.logo 
+{
+  width:1000px;
+}
+  </style>
+</body>
+</html>
