@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,10 +10,11 @@
   <body>
     <div class="menu menu-paddings">
       <div class="menu__header">
-        <a class="button button-round button__close"></a>
-        <a class="button button-round button__search"></a>
+        <button class="button button-round button__close"></button>
+        <a href="http://" target="_blank"><img src="ic/Group.svg" alt="Logo" class="logo"></a>
+        <button class="button button-round button__search"></button>
       </div>
-      <div class="menu__items">
+      <nav class="menu__items">
         <a class="menu__item menu__item--active">Ремонт техники</a>
         <a class="menu__item">Услуги и сервисы</a>
         <a class="menu__item">Корпоративным клиентам</a>
@@ -22,24 +23,24 @@
         <a class="menu__item">Производителям</a>
         <a class="menu__item">Наши сервисные центры</a>
         <a class="menu__item">Контакты</a>
-      </div>
+      </nav>
       <div class="menu__footer">
-        <div class="contacts-ancors">
-          <a class="button button-round button__phone"></a>
-          <a class="button button-round button__chat"></a>
-          <a class="button button-round button__profile"></a>
+        <div class="ccontacts-ancors">
+          <button class="button button-round button__phone contacts-ancors_ancor-item"></button>
+          <button class="button button-round button__chat contacts-ancors_ancor-item"></button>
+          <button class="button button-round button__profile contacts-ancors_ancor-item"></button>
         </div>
         <a class="mail" href="mailto:mail@cps.com">mail@cps.com</a>
         <a class="phone" href="tel:88008908900">8 800 890 8900</a>
       </div>
-      <nav class="lacales">
-        <a class="lacales__item lacales__item--active">RU</a>
-        <a class="lacales__item">EN</a>
-        <a class="lacales__item">CH</a>
-      </nav>
+      <div class="lacales">
+        <button class="lacales__item lacales__item--active">RU</button>
+        <button class="lacales__item">EN</button>
+        <button class="lacales__item">CH</button>
+      </div>
     </div>
   </body>
 </html>
 <style>
- 
+
 </style>
