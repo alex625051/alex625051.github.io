@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "TT Lakes";
+  src: url("fonts/TTLakes/TTLakes-Medium.eot");
+  src: local("TT Lakes Medium"), local("TTLakes-Medium"),
+    url("fonts/TTLakes/TTLakes-Medium.eot?#iefix") format("embedded-opentype"),
+    url("fonts/TTLakes/TTLakes-Medium.woff") format("woff"),
+    url("fonts/TTLakes/TTLakes-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: medium;
+}
+body {
+  background: #f2f2f2;
+  font-family: "TT Lakes", "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+ 
  /*для мобильных устройств*/
  .navigation-menu {
     width: 100%;
