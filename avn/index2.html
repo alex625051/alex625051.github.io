@@ -6,7 +6,7 @@
     <title>js-dos api</title>
     <style type="text/css">
       .dosbox-container { width: 640px; height: 400px; }
-      .dosbox-container > .dosbox-overlay { background: url(https://js-dos.com/cdn/alley_cat.png); }
+      .dosbox-container > .dosbox-overlay { background: url(http://old-dos.ru/screens/f/e/c/9565d1d4f4ecb789fdc8a1641da72.png); }
       .dosbox-start { font-size: 35px !important; }
     </style>
   </head>
@@ -20,7 +20,7 @@
       var dosbox = new Dosbox({
         id: "dosbox",
         onload: function (dosbox) {
-          dosbox.run("avn/GOROSKOP.Russian (1).zip", "./HORO/GO.BAT");
+          dosbox.run("avn/horo.zip", "./GO.BAT");
         },
         onrun: function (dosbox, app) {
           console.log("App '" + app + "' is runned");
